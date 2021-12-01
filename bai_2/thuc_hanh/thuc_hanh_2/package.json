@@ -1,0 +1,7 @@
+{
+  "name": "thuc_hanh_2",
+  "version": "1.0.0",
+  "dependencies": {
+    "typescript": "^4.5.2"
+  }
+}
