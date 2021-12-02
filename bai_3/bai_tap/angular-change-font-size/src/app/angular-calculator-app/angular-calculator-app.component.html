@@ -1,0 +1,15 @@
+<h2>CALCULATOR</h2>
+<div>
+  <input type="number" name="number1" [value]="firstNumber" />
+  <select [value]="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <input type="number" name="number2" [value]="secondNumber" />
+</div>
+<button (click)="calculate()">Calculate</button>
+<div class="output">
+  <span> Result: </span> <span>{{ output }}</span>
+</div>
