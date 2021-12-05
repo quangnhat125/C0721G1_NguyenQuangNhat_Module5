@@ -18,7 +18,7 @@ export class StudentComponent implements OnInit, OnChanges {
   listStudent: Student[];
   @Input() studentId: string;
   @Input() newGender: number;
-  @Output() evenEmitter = new EventEmitter();
+  @Output() getGenderInfo = new EventEmitter();
   color: string = "";
   updatedGenderValue: number = 0;
 
@@ -34,7 +34,7 @@ export class StudentComponent implements OnInit, OnChanges {
   }
 
   genderValueChange() {
-    this.evenEmitter.emit({
+    this.getGenderInfo.emit({
       id: this.studentId,
       updatedGenderValue: this.updatedGenderValue,
     });
