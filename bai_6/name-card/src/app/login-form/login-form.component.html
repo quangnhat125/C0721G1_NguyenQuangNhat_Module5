@@ -1,0 +1,44 @@
+<h2 style="text-align: center">LOGIN FORM</h2>
+<form [formGroup]="loginForm">
+  <div>
+    Email:
+    <input type="text" name="email" formControlName="email" />
+    <span
+      style="color: red"
+      *ngIf="
+        loginForm.controls.email.hasError('required') &&
+        loginForm.controls.email.dirty
+      "
+      >Email cannot be blank!</span
+    >
+    <span
+      style="color: red"
+      *ngIf="
+        loginForm.controls.email.hasError('email') &&
+        loginForm.controls.email.dirty
+      "
+      >Invalid Format!</span
+    >
+  </div>
+  <div>
+    Password:
+    <input type="text" name="password" formControlName="password" />
+    <span
+      style="color: red"
+      *ngIf="
+        loginForm.controls.password.hasError('required') &&
+        loginForm.controls.password.dirty
+      "
+      >Email cannot be blank!</span
+    >
+    <span
+      style="color: red"
+      *ngIf="
+        loginForm.controls.password.hasError('minlength') &&
+        loginForm.controls.password.dirty
+      "
+      >Invalid Format!</span
+    >
+  </div>
+  <button [disabled]="!loginForm.valid" type="submit">Login</button>
+</form>
