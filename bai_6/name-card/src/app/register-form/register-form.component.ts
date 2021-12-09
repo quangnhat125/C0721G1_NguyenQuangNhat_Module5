@@ -27,5 +27,10 @@ export class RegisterFormComponent implements OnInit {
       Validators.pattern("^\\+84\\d{9,10}$"),
     ]),
   });
-  register() {}
+  register() {
+    console.log(this.registerForm.value);
+  }
+  // checkConfirmPassword() {
+  //   this.
+  // }
 }
