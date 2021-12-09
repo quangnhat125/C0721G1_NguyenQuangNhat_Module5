@@ -1,0 +1,38 @@
+<h2 style="text-align: center">CUSTOMER LIST</h2>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Customer ID</th>
+    <th scope="col">Customer Name</th>
+    <th scope="col">Birthday</th>
+    <th scope="col">Customer Type</th>
+    <th scope="col">ID Card</th>
+    <th scope="col">Phone Number</th>
+    <th scope="col">Email</th>
+    <th scope="col">Address</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let cus of customerList">
+    <td>{{cus.id}}</td>
+    <td>{{cus.name}}</td>
+    <td>{{cus.birthday}}</td>
+    <td>{{cus.customerType.name}}</td>
+    <td>{{cus.idCard}}</td>
+    <td>{{cus.phone}}</td>
+    <td>{{cus.email}}</td>
+    <td>{{cus.address}}</td>
+    <td>
+      <button class="btn btn-primary" type="button"><a style="color: black" routerLink="/customer/update/{{this.cus.id}}">Edit</a>
+      </button>
+    </td>
+    <td>
+      <button class="btn btn-primary">
+        <a style="color: black" routerLink="/customer/delete/{{this.cus.id}}">Delete</a>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>

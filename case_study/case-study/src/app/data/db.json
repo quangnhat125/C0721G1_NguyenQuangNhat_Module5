@@ -1,0 +1,134 @@
+{
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinum"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ],
+  "customer": [
+    {
+      "id": "1",
+      "name": "Nhat Nguyen Quang",
+      "customerType": {
+        "id": 4,
+        "name": "Silver"
+      },
+      "birthday": "2020-07-08",
+      "idCard": "200178283",
+      "phone": "4379844751",
+      "email": "quangnhatnguyen2011@gmail.com",
+      "address": "78 St Clarens Ave"
+    },
+    {
+      "id": "2",
+      "name": "Nguyễn Ngọc Quỳnh",
+      "customerType": {
+        "id": 5,
+        "name": "Member"
+      },
+      "birthday": "2019-06-05",
+      "idCard": "201777888",
+      "phone": "0835123123",
+      "email": "a@gmail.com",
+      "address": "Hanoi"
+    }
+  ],
+  "position": [
+    {
+      "id": 1,
+      "name": "Receptionist"
+    },
+    {
+      "id": 2,
+      "name": "Waiter"
+    },
+    {
+      "id": 3,
+      "name": "Specialist"
+    },
+    {
+      "id": 4,
+      "name": "Moderator"
+    },
+    {
+      "id": 5,
+      "name": "Manager"
+    },
+    {
+      "id": 6,
+      "name": "Director"
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "name": "Highschool"
+    },
+    {
+      "id": 2,
+      "name": "College"
+    },
+    {
+      "id": 3,
+      "name": "University"
+    },
+    {
+      "id": 4,
+      "name": "Post-Graduated"
+    }
+  ],
+  "division": [
+    {
+      "id": 1,
+      "name": "Sale-Marketing"
+    },
+    {
+      "id": 2,
+      "name": "Administrative"
+    },
+    {
+      "id": 3,
+      "name": "Service"
+    }, {
+      "id": 4,
+      "name": "Management"
+    }
+  ],
+  "employee": [
+    {
+      "id": 1,
+      "name": "Nguyen Quang A",
+      "birthday": "1990-05-10",
+      "idCard": "200189933",
+      "email": "QA@gmail.com",
+      "education": {"id": 1,
+        "name": "Highschool"
+      },
+      "position": {
+        "id": 1,
+        "name": "Receptionist"
+      },
+      "division": {
+        "id": 1,
+        "name": "Sale-Marketing"
+      },
+      "salary": 10000000
+    }
+  ]
+}

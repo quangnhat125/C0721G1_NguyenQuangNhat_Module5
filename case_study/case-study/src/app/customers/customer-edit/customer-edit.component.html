@@ -1,0 +1,89 @@
+<h2 style="text-align: center">UPDATE CUSTOMER FORM</h2>
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6" align="center">
+    <form [formGroup]="customerForm" (ngSubmit)="updateCustomer()">
+      <table border="1" cellpadding="5">
+        <tr>
+          <th>ID:</th>
+          <td>
+            <input type="text" formControlName="id" required />
+            <span style="color: red" *ngIf="customerForm.controls.id.hasError('required') && customerForm.controls.id.dirty">
+            ID cannot be blank!</span>
+          </td>
+        </tr>
+        <tr>
+          <th>Name:</th>
+          <td>
+            <input type="text" formControlName="name" required />
+            <span style="color: red" *ngIf="customerForm.controls.name.hasError('required') && customerForm.controls.name.dirty">
+            Name cannot be blank!</span>
+          </td>
+        </tr>
+        <tr>
+          <th>Customer Type:</th>
+          <td>
+            <select
+              name="customerType"
+              id="customerType"
+              formControlName="customerType"
+            >
+              <option value=""></option>
+              <option *ngFor="let type of customerTypeList " [ngValue]="type">
+                {{type.name}}
+              </option>
+            </select>
+            <span style="color: red" *ngIf="customerForm.controls.customerType.hasError('required') && customerForm.controls.name.dirty">
+            Customer Type cannot be blank!</span>
+          </td>
+        </tr>
+        <tr>
+          <th>Birthday:</th>
+          <td>
+            <input type="date" formControlName="birthday" required />
+            <span style="color: red" *ngIf="customerForm.controls.birthday.hasError('required') && customerForm.controls.birthday.dirty">
+            Birthday cannot be blank!</span>
+          </td>
+        </tr>
+        <tr>
+          <th>ID Card:</th>
+          <td>
+            <input type="text" formControlName="idCard" required />
+            <span style="color: red" *ngIf="customerForm.controls.idCard.hasError('required') && customerForm.controls.idCard.dirty">
+            ID Card cannot be blank!</span>
+          </td>
+        </tr>
+        <tr>
+          <th>Phone:</th>
+          <td>
+            <input type="text" formControlName="phone" required />
+            <span style="color: red" *ngIf="customerForm.controls.phone.hasError('required') && customerForm.controls.phone.dirty">
+            Phone cannot be blank!</span>
+          </td>
+        </tr>
+        <tr>
+          <th>Email:</th>
+          <td>
+            <input type="text" formControlName="email" required />
+            <span style="color: red" *ngIf="customerForm.controls.email.hasError('required') && customerForm.controls.email.dirty">
+            Email cannot be blank!</span>
+          </td>
+        </tr>
+        <tr>
+          <th>Address:</th>
+          <td>
+            <input type="text" formControlName="address" required />
+            <span style="color: red" *ngIf="customerForm.controls.address.hasError('required') && customerForm.controls.address.dirty">
+            Address cannot be blank!</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <input type="submit" value="CREATE" />
+          </td>
+        </tr>
+      </table>
+      <div class="col-3"></div>
+    </form>
+  </div>
+</div>
