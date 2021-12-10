@@ -5,8 +5,8 @@ import {FormGroup} from '@angular/forms';
 import {Component, OnInit} from '@angular/core';
 import {Customer} from 'src/app/model/customer';
 import {CustomerType} from 'src/app/model/CustomerType';
-import {CustomerService} from '../../service/customer.service';
-import {CustomerTypeService} from "../../service/customer-type.service";
+import {CustomerService} from '../../service/customer/customer.service';
+import {CustomerTypeService} from "../../service/customer/customer-type.service";
 import {Router} from "@angular/router";
 
 @Component({

@@ -11,6 +11,7 @@ import { YoutubePlayerComponent } from "./youtube-player/youtube-player.componen
 import { ProductManagementAppComponent } from "./product-management-app/product-management-app.component";
 import { ProductListComponent } from "./product/product-list/product-list.component";
 import { ProductCreateComponent } from "./product/product-create/product-create.component";
+import { DictionaryComponent } from './dictionary/dictionary.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ProductCreateComponent } from "./product/product-create/product-create.
     ProductManagementAppComponent,
     ProductListComponent,
     ProductCreateComponent,
+    DictionaryComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],

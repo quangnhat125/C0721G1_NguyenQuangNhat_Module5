@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {CustomerService} from '../../service/customer.service';
-import {CustomerTypeService} from '../../service/customer-type.service';
+import {CustomerService} from '../../service/customer/customer.service';
+import {CustomerTypeService} from '../../service/customer/customer-type.service';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {CustomerType} from '../../model/CustomerType';
 import {Customer} from '../../model/Customer';
@@ -50,4 +50,7 @@ export class CustomerEditComponent implements OnInit {
   getCustomer(id: number) {
     return this.customerService.findById(id).subscribe(customer => {this.customerForm.setValue(customer); });
 }
+  compareFn(c1: CustomerType, c2: CustomerType): boolean {
+    return c1 && c2 ? c1.id === c2.id : c1 === c2;
+  }
 }

@@ -5,6 +5,7 @@ import { CustomerListComponent } from './customers/customer-list/customer-list.c
 import {CustomerCreateComponent} from './customers/customer-create/customer-create.component';
 import {CustomerDeleteComponent} from './customers/customer-delete/customer-delete.component';
 import {CustomerEditComponent} from './customers/customer-edit/customer-edit.component';
+import {EmployeeListComponent} from './employee/employee-list/employee-list.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,8 @@ const routes: Routes = [
     children: [{ path: 'customer', component: CustomerListComponent },
       {path: 'customer/create', component: CustomerCreateComponent},
       {path: 'customer/delete/:id', component: CustomerDeleteComponent},
-      {path: 'customer/update/:id', component: CustomerEditComponent}],
+      {path: 'customer/update/:id', component: CustomerEditComponent},
+      {path: 'employee', component: EmployeeListComponent}],
   },
 ];
 @NgModule({

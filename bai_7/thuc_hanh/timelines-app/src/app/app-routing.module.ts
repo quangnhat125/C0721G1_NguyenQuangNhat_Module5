@@ -5,6 +5,7 @@ import { TimelinesComponent } from "./timelines/timelines.component";
 import { YoutubePlayerComponent } from "./youtube-player/youtube-player.component";
 import { ProductListComponent } from "./product/product-list/product-list.component";
 import { ProductCreateComponent } from "./product/product-create/product-create.component";
+import {DictionaryComponent} from "./dictionary/dictionary.component";
 
 const routes: Routes = [
   {
@@ -27,6 +28,9 @@ const routes: Routes = [
     path: "product/create",
     component: ProductCreateComponent,
   },
+  {
+    path: "dictionary", component: DictionaryComponent
+  }
 ];
 
 @NgModule({

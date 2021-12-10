@@ -27,6 +27,7 @@
               name="customerType"
               id="customerType"
               formControlName="customerType"
+              [compareWith]="compareFn"
             >
               <option value=""></option>
               <option *ngFor="let type of customerTypeList " [ngValue]="type">
