@@ -11,6 +11,8 @@ import {CustomersModule} from './customers/customers.module';
 import {CommonModule} from '@angular/common';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { CustomerEditComponent } from './customers/customer-edit/customer-edit.component';
+import {EmployeesModule} from './employees/employees.module';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { CustomerEditComponent } from './customers/customer-edit/customer-edit.c
     LayoutComponent,
     CustomerEditComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, CommonModule, ReactiveFormsModule, CustomersModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, CommonModule, ReactiveFormsModule,
+    CustomersModule, HttpClientModule, EmployeesModule ],
   providers: [],
   bootstrap: [AppComponent],
 })

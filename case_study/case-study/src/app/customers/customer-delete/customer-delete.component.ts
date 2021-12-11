@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CustomerService} from '../../service/customer/customer.service';
-import {Customer} from '../../model/Customer';
+import {Customer} from '../../model/customer';
 import {ActivatedRoute, Route, Router} from '@angular/router';
 
 @Component({
@@ -27,6 +27,6 @@ export class CustomerDeleteComponent implements OnInit {
   }
 
   confirmDelete() {
-    this.customerService.deleteCustomer(this.customer.id).subscribe(value => this.router.navigateByUrl('customer'));
+    this.customerService.deleteCustomer(this.customer.id).subscribe(value => this.router.navigateByUrl('customer/list'));
   }
 }

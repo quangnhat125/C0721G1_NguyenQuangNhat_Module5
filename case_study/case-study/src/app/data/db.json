@@ -1,5 +1,5 @@
 {
-  "customerType": [
+  "customer-type": [
     {
       "id": 1,
       "name": "Diamond"
@@ -26,8 +26,8 @@
       "id": "1",
       "name": "Nhat Nguyen Quang",
       "customerType": {
-        "id": 4,
-        "name": "Silver"
+        "id": 2,
+        "name": "Platinum"
       },
       "birthday": "2020-07-08",
       "idCard": "200178283",
@@ -105,7 +105,8 @@
     {
       "id": 3,
       "name": "Service"
-    }, {
+    },
+    {
       "id": 4,
       "name": "Management"
     }
@@ -117,7 +118,9 @@
       "birthday": "1990-05-10",
       "idCard": "200189933",
       "email": "QA@gmail.com",
-      "education": {"id": 1,
+      "phone": "0915858501",
+      "education": {
+        "id": 1,
         "name": "Highschool"
       },
       "position": {

@@ -1,0 +1,42 @@
+<h2 style="text-align: center">EMPLOYEE LIST</h2>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Employee ID</th>
+    <th scope="col">Employee Name</th>
+    <th scope="col">Birthday</th>
+    <th scope="col">ID Card</th>
+    <th scope="col">Phone Number</th>
+    <th scope="col">Email</th>
+    <th scope="col">Education</th>
+    <th scope="col">Position</th>
+    <th scope="col">Division</th>
+    <th scope="col">Salary</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let emp of employeeList">
+    <td>{{emp.id}}</td>
+    <td>{{emp.name}}</td>
+    <td>{{emp.birthday}}</td>
+    <td>{{emp.idCard}}</td>
+    <td>{{emp.phone}}</td>
+    <td>{{emp.email}}</td>
+    <td>{{emp.education.name}}</td>
+    <td>{{emp.position.name}}</td>
+    <td>{{emp.division.name}}</td>
+    <td>{{emp.salary}}</td>
+    <td>
+      <button class="btn btn-primary" type="button"><a style="color: black" >Edit</a>
+      </button>
+    </td>
+    <td>
+      <button class="btn btn-primary">
+        <a style="color: black" >Delete</a>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>

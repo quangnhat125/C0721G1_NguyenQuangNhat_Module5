@@ -1,4 +1,7 @@
 <h2 style="text-align: center">CUSTOMER LIST</h2>
+
+  <a class="nav-link" routerLink="/create">Create Customer</a>
+
 <table class="table">
   <thead>
   <tr>
@@ -25,7 +28,7 @@
     <td>{{cus.email}}</td>
     <td>{{cus.address}}</td>
     <td>
-      <button class="btn btn-primary" type="button"><a style="color: black" routerLink="/customer/update/{{this.cus.id}}">Edit</a>
+      <button class="btn btn-primary" type="button"><a style="color: black" routerLink="/update/{{this.cus.id}}">Edit</a>
       </button>
     </td>
     <td>

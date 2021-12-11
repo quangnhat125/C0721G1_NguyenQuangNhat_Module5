@@ -6,8 +6,8 @@ import {Component, OnInit} from '@angular/core';
 import {Customer} from 'src/app/model/customer';
 import {CustomerType} from 'src/app/model/CustomerType';
 import {CustomerService} from '../../service/customer/customer.service';
-import {CustomerTypeService} from "../../service/customer/customer-type.service";
-import {Router} from "@angular/router";
+import {CustomerTypeService} from '../../service/customer/customer-type.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-customer-create',
@@ -33,11 +33,17 @@ export class CustomerCreateComponent implements OnInit {
               private router: Router) {
   }
   ngOnInit(): void {
-    this.customerTypeList = this.customerTypeService.getCustomerTypeList();
+    this.getAllCustomerType();
+    console.log(this.customerTypeList);
   }
   submit() {
     const customer = this.customerForm.value;
     this.customer.createCustomer(customer).subscribe();
-    this.router.navigateByUrl('customer');
+    this.router.navigateByUrl('customer/list');
+  }
+  getAllCustomerType() {
+    this.customerTypeService.getCustomerTypeList().subscribe(customerTypeList => {
+      this.customerTypeList = customerTypeList;
+    });
   }
 }

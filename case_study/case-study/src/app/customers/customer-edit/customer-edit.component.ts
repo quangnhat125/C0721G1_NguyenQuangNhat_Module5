@@ -4,7 +4,7 @@ import {CustomerService} from '../../service/customer/customer.service';
 import {CustomerTypeService} from '../../service/customer/customer-type.service';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {CustomerType} from '../../model/CustomerType';
-import {Customer} from '../../model/Customer';
+import {Customer} from '../../model/customer';
 
 @Component({
   selector: 'app-customer-edit',
@@ -39,18 +39,24 @@ export class CustomerEditComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.customerTypeList = this.customerTypeService.getCustomerTypeList();
+    this.getAllCustomerType();
+
   }
 
   updateCustomer(): void {
     const customerUpdate = Object.assign({}, this.customerForm.value);
     this.customerService.updateCustomer(customerUpdate).subscribe();
-    this.router.navigateByUrl('customer');
+    this.router.navigateByUrl('customer/list');
   }
   getCustomer(id: number) {
     return this.customerService.findById(id).subscribe(customer => {this.customerForm.setValue(customer); });
 }
   compareFn(c1: CustomerType, c2: CustomerType): boolean {
     return c1 && c2 ? c1.id === c2.id : c1 === c2;
+  }
+  getAllCustomerType() {
+    this.customerTypeService.getCustomerTypeList().subscribe(customerTypeList => {
+      this.customerTypeList = customerTypeList;
+    });
   }
 }
