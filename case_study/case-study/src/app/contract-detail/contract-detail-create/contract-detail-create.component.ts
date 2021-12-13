@@ -16,7 +16,6 @@ export class ContractDetailCreateComponent implements OnInit {
   contractList: Contract[];
   attachServiceList: AttachService[];
   contractDetailForm = new FormGroup( {
-    id: new FormControl('', Validators.required),
     contract: new FormControl('', Validators.required),
     attachService: new FormControl('', Validators.required),
     quantity: new FormControl('', Validators.required),

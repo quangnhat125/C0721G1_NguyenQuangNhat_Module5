@@ -4,12 +4,21 @@
   <div class="col-6" align="center">
     <form [formGroup]="customerForm" (ngSubmit)="updateCustomer()">
       <table border="1" cellpadding="5">
+       <input hidden formControlName="id">
         <tr>
-          <th>ID:</th>
+          <th>Customer Code:</th>
           <td>
-            <input type="text" formControlName="id" required />
-            <span style="color: red" *ngIf="customerForm.controls.id.hasError('required') && customerForm.controls.id.dirty">
-            ID cannot be blank!</span>
+            <input type="text" formControlName="code" required="">
+            <div style="color: red"
+                 *ngIf="!customerForm.controls.code.valid && (customerForm.controls.code.dirty ||
+            customerForm.controls.code.touched)">
+              <div [hidden]="!customerForm.get('code').errors.required">
+                Number Of Floor cannot be blank!
+              </div>
+              <div [hidden]="!customerForm.get('code').errors.pattern">
+                Please enter correct format! (KH-XXXX)
+              </div>
+            </div>
           </td>
         </tr>
         <tr>
@@ -50,24 +59,48 @@
           <th>ID Card:</th>
           <td>
             <input type="text" formControlName="idCard" required />
-            <span style="color: red" *ngIf="customerForm.controls.idCard.hasError('required') && customerForm.controls.idCard.dirty">
-            ID Card cannot be blank!</span>
+            <div style="color: red"
+                 *ngIf="!customerForm.controls.idCard.valid && (customerForm.controls.idCard.dirty ||
+            customerForm.controls.code.touched)">
+              <div [hidden]="!customerForm.get('idCard').errors.required">
+                ID Card cannot be blank!
+              </div>
+              <div [hidden]="!customerForm.get('idCard').errors.pattern">
+                Please enter correct format! (9 or 12 digits)
+              </div>
+            </div>
           </td>
         </tr>
         <tr>
           <th>Phone:</th>
           <td>
             <input type="text" formControlName="phone" required />
-            <span style="color: red" *ngIf="customerForm.controls.phone.hasError('required') && customerForm.controls.phone.dirty">
-            Phone cannot be blank!</span>
+            <div style="color: red"
+                 *ngIf="!customerForm.controls.phone.valid && (customerForm.controls.phone.dirty ||
+            customerForm.controls.phone.touched)">
+              <div [hidden]="!customerForm.get('phone').errors.required">
+                Phone number cannot be blank!
+              </div>
+              <div [hidden]="!customerForm.get('phone').errors.pattern">
+                Please enter correct format! (090-XXXXXXX or 091-XXXXXXX)
+              </div>
+            </div>
           </td>
         </tr>
         <tr>
           <th>Email:</th>
           <td>
             <input type="text" formControlName="email" required />
-            <span style="color: red" *ngIf="customerForm.controls.email.hasError('required') && customerForm.controls.email.dirty">
-            Email cannot be blank!</span>
+            <div style="color: red"
+                 *ngIf="!customerForm.controls.email.valid && (customerForm.controls.email.dirty ||
+            customerForm.controls.email.touched)">
+              <div [hidden]="!customerForm.get('email').errors.required">
+                Email cannot be blank!
+              </div>
+              <div [hidden]="!customerForm.get('email').errors.pattern">
+                Please enter correct format!
+              </div>
+            </div>
           </td>
         </tr>
         <tr>
@@ -80,7 +113,7 @@
         </tr>
         <tr>
           <td colspan="2" align="center">
-            <input type="submit" value="CREATE" />
+            <button [disabled]="!customerForm.valid">UPDATE</button>
           </td>
         </tr>
       </table>

@@ -1,26 +1,18 @@
-<h2 style="text-align: center">CREATE CUSTOMER FORM</h2>
+<h2 style="text-align: center">CREATE CONTRACT FORM</h2>
 <div class="row">
   <div class="col-3"></div>
   <div class="col-6" align="center">
     <form [formGroup]="contractForm" (ngSubmit)="createContract()">
       <table border="1" cellpadding="5">
         <tr>
-          <th>Contract ID:</th>
-          <td>
-            <input type="text" formControlName="id" required />
-            <span style="color: red" *ngIf="contractForm.controls.id.hasError('required') && contractForm.controls.id.dirty">
-            ID cannot be blank!</span>
-          </td>
-        </tr>
-        <tr>
-          <th>Employee ID:</th>
+          <th>Employee Name:</th>
           <td>
             <select
               formControlName="employee"
             >
               <option value=""></option>
               <option *ngFor="let emp of employeeList " [ngValue]="emp">
-                {{emp.id}}
+                {{emp.name}}
               </option>
             </select>
             <span style="color: red" *ngIf="contractForm.controls.employee.hasError('required') && contractForm.controls.employee.dirty">
@@ -28,14 +20,14 @@
           </td>
         </tr>
         <tr>
-          <th>Customer ID:</th>
+          <th>Customer Name:</th>
           <td>
             <select
               formControlName="customer"
             >
               <option value=""></option>
               <option *ngFor="let cus of customerList " [ngValue]="cus">
-                {{cus.id}}
+                {{cus.name}}
               </option>
             </select>
             <span style="color: red" *ngIf="contractForm.controls.customer.hasError('required') && contractForm.controls.customer.dirty">
@@ -43,14 +35,14 @@
           </td>
         </tr>
         <tr>
-          <th>Service ID:</th>
+          <th>Service Name:</th>
           <td>
             <select
               formControlName="service"
             >
               <option value=""></option>
               <option *ngFor="let service of serviceList " [ngValue]="service">
-                {{service.id}}
+                {{service.name}}
               </option>
             </select>
             <span style="color: red" *ngIf="contractForm.controls.customer.hasError('required') && contractForm.controls.customer.dirty">
@@ -68,7 +60,7 @@
         <tr>
           <th>End Date:</th>
           <td>
-            <input type="date" formControlName="id" required />
+            <input type="date" formControlName="endDate" required />
             <span style="color: red" *ngIf="contractForm.controls.endDate.hasError('required') && contractForm.controls.endDate.dirty">
            End Date cannot be blank!</span>
           </td>

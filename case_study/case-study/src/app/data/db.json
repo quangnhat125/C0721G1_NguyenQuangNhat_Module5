@@ -21,7 +21,36 @@
       "name": "Member"
     }
   ],
-  "customer": [],
+  "customer": [
+    {
+      "code": "KH-0002",
+      "name": "Nhat Nguyen",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "birthday": "2021-12-01",
+      "idCard": "201753690",
+      "phone": "0905858501",
+      "email": "quangnhatnguyen2011@gmail.com",
+      "address": "78 St Clarens Ave",
+      "id": 4
+    },
+    {
+      "code": "KH-0003",
+      "name": "Bảo Nhi",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "birthday": "2021-12-01",
+      "idCard": "201753690",
+      "phone": "0905858501",
+      "email": "quangnhatnguyen@gmail.com",
+      "address": "Danang",
+      "id": 5
+    }
+  ],
   "position": [
     {
       "id": 1,
@@ -86,46 +115,26 @@
   ],
   "employee": [
     {
-      "id": 1,
-      "name": "Nguyen Quang A",
-      "birthday": "1990-05-10",
-      "idCard": "200189933",
-      "email": "QA@gmail.com",
+      "code": "NV-0001",
+      "name": "Chung Dinh",
+      "birthday": "2021-02-09",
+      "idCard": "201777888",
       "phone": "0915858501",
+      "email": "quangnhatnguyen2011@gmail.com",
       "education": {
-        "id": 1,
-        "name": "Highschool"
-      },
-      "position": {
-        "id": 1,
-        "name": "Receptionist"
-      },
-      "division": {
         "id": 2,
-        "name": "Administrative"
-      },
-      "salary": 10000000
-    },
-    {
-      "id": "2",
-      "name": "Nguyễn Ngọc Quỳnh",
-      "birthday": "2019-03-06",
-      "idCard": "201753690",
-      "phone": "0835111111",
-      "email": "B@gmail.com",
-      "education": {
-        "id": 1,
-        "name": "Highschool"
+        "name": "College"
       },
       "position": {
         "id": 2,
         "name": "Waiter"
       },
       "division": {
-        "id": 2,
-        "name": "Administrative"
+        "id": 1,
+        "name": "Sale-Marketing"
       },
-      "salary": "20000000"
+      "salary": "2000000",
+      "id": 1
     }
   ],
   "rent-type": [
@@ -152,32 +161,19 @@
   ],
   "service": [
     {
-      "id": 1,
-      "name": "Villa",
-      "area": 100,
-      "numberFloor": 2,
-      "maxPeople": 6,
-      "price": 2000000,
-      "rentType": {
-        "id": 3,
-        "name": "Day",
-        "price": 1000000
-      },
-      "status": "Available"
-    },
-    {
-      "id": "6",
-      "name": "VL22",
-      "area": "100",
-      "numberFloor": "3",
-      "maxPeople": "4",
-      "price": "200000",
+      "code": "DV-0001",
+      "name": "VL-0001",
+      "area": "120",
+      "numberFloor": "2",
+      "maxPeople": "10",
+      "price": "2000000",
       "rentType": {
         "id": 2,
         "name": "Month",
         "price": 10000000
       },
-      "status": "2"
+      "status": "Available",
+      "id": 1
     }
   ],
   "attach-service": [
@@ -212,17 +208,82 @@
       "price": 250000
     }
   ],
-  "contract-detail": [],
+  "contract-detail": [
+    {
+      "contract": {
+        "employee": {
+          "id": "2",
+          "name": "Nguyễn Ngọc Quỳnh",
+          "birthday": "2021-12-01",
+          "idCard": "200177777",
+          "phone": "0816777777",
+          "email": "B@gmail.com",
+          "education": {
+            "id": 1,
+            "name": "Highschool"
+          },
+          "position": {
+            "id": 1,
+            "name": "Receptionist"
+          },
+          "division": {
+            "id": 2,
+            "name": "Administrative"
+          },
+          "salary": "20000000"
+        },
+        "customer": {
+          "id": 1,
+          "name": "Nguyễn Quang Nhật",
+          "customerType": {
+            "id": 2,
+            "name": "Platinum"
+          },
+          "birthday": "2020-10-13",
+          "idCard": "2001782823",
+          "phone": "0835123123",
+          "email": "quangnhatnguyen2011@gmail.com",
+          "address": "K10/17  Phạm Văn Nghị"
+        },
+        "service": {
+          "id": 1,
+          "name": "Villa",
+          "area": 100,
+          "numberFloor": 2,
+          "maxPeople": 6,
+          "price": 2000000,
+          "rentType": {
+            "id": 3,
+            "name": "Day",
+            "price": 1000000
+          },
+          "status": "Available"
+        },
+        "startDate": "2021-12-07",
+        "endDate": "2021-12-22",
+        "deposit": "20000000",
+        "total": "",
+        "id": 1
+      },
+      "attachService": {
+        "id": 2,
+        "name": "Karaoke",
+        "unit": 1,
+        "price": 200000
+      },
+      "quantity": "200000",
+      "id": 1
+    }
+  ],
   "contract": [
     {
-      "id": "2021-03-15",
       "employee": {
-        "id": 1,
-        "name": "Nguyen Quang A",
-        "birthday": "1990-05-10",
-        "idCard": "200189933",
-        "email": "QA@gmail.com",
-        "phone": "0915858501",
+        "id": "2",
+        "name": "Nguyễn Ngọc Quỳnh",
+        "birthday": "2021-12-01",
+        "idCard": "200177777",
+        "phone": "0816777777",
+        "email": "B@gmail.com",
         "education": {
           "id": 1,
           "name": "Highschool"
@@ -235,39 +296,40 @@
           "id": 2,
           "name": "Administrative"
         },
-        "salary": 10000000
+        "salary": "20000000"
       },
       "customer": {
-        "id": "1",
-        "name": "Nhat Nguyen Quang",
+        "id": 1,
+        "name": "Nguyễn Quang Nhật",
         "customerType": {
           "id": 2,
           "name": "Platinum"
         },
-        "birthday": "2020-07-08",
-        "idCard": "200178283",
-        "phone": "4379844751",
+        "birthday": "2020-10-13",
+        "idCard": "2001782823",
+        "phone": "0835123123",
         "email": "quangnhatnguyen2011@gmail.com",
-        "address": "78 St Clarens Ave"
+        "address": "K10/17  Phạm Văn Nghị"
       },
       "service": {
-        "id": "6",
-        "name": "VL22",
-        "area": "100",
-        "numberFloor": "3",
-        "maxPeople": "4",
-        "price": "200000",
+        "id": 1,
+        "name": "Villa",
+        "area": 100,
+        "numberFloor": 2,
+        "maxPeople": 6,
+        "price": 2000000,
         "rentType": {
-          "id": 2,
-          "name": "Month",
-          "price": 10000000
+          "id": 3,
+          "name": "Day",
+          "price": 1000000
         },
-        "status": "2"
+        "status": "Available"
       },
-      "startDate": "2021-02-02",
-      "endDate": "",
-      "Deposit": "",
-      "Total": ""
+      "startDate": "2021-12-07",
+      "endDate": "2021-12-22",
+      "deposit": "20000000",
+      "total": "",
+      "id": 1
     }
   ]
 }

@@ -24,7 +24,7 @@ export class EmployeeDeleteComponent implements OnInit {
     this.employeeService.findById(id);
   }
   confirmDelete() {
-    this.employeeService.deleteCustomer(this.employee.id).subscribe(value => this.router.navigateByUrl('employee/list'));
+    this.employeeService.deleteEmployee(this.employee.id).subscribe(value => this.router.navigateByUrl('employee/list'));
   }
 
 }

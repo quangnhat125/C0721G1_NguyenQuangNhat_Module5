@@ -18,6 +18,7 @@ export class CustomerListComponent implements OnInit {
   customerTypeList: CustomerType[];
   customerSearch: Customer;
   idDelete: number;
+  page = 1;
   customerSearchForm = new FormGroup({
     name: new FormControl(''),
     customerType: new FormControl('')

@@ -6,6 +6,7 @@
   <thead>
   <tr>
     <th scope="col">Service ID</th>
+    <th scope="col">Service Code</th>
     <th scope="col">Service Name</th>
     <th scope="col">Area</th>
     <th scope="col">Number Of Floor</th>
@@ -20,6 +21,7 @@
   <tbody>
   <tr *ngFor="let service of serviceList">
     <td>{{service.id}}</td>
+    <td>{{service.code}}</td>
     <td>{{service.name}}</td>
     <td>{{service.area}}</td>
     <td>{{service.numberFloor}}</td>

@@ -45,6 +45,7 @@
   <thead>
   <tr>
     <th scope="col">Customer ID</th>
+    <th scope="col">Customer Code</th>
     <th scope="col">Customer Name</th>
     <th scope="col">Birthday</th>
     <th scope="col">Customer Type</th>
@@ -57,8 +58,9 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let cus of customerList">
+  <tr *ngFor="let cus of customerList | paginate: { itemsPerPage: 5, currentPage: page }">
     <td>{{cus.id}}</td>
+    <td>{{cus.code}}</td>
     <td>{{cus.name}}</td>
     <td>{{cus.birthday}}</td>
     <td>{{cus.customerType.name}}</td>
@@ -81,8 +83,8 @@
   </tr>
   </tbody>
 </table>
+<pagination-controls (pageChange)="page = $event"></pagination-controls>
 
-<!-- Button trigger modal -->
 <!-- Modal -->
 <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
   <div class="modal-dialog" role="document">

@@ -4,6 +4,7 @@ import {Division} from './Division';
 
 export class Employee {
   id: number;
+  code: string;
   name: string;
   birthday: string;
   idCard: string;

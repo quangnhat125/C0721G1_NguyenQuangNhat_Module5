@@ -22,14 +22,15 @@ export class ContractCreateComponent implements OnInit {
   customerList: Customer[];
   serviceList: Service[];
   contractForm = new FormGroup({
-    id: new FormControl('', Validators.required),
     employee: new FormControl('', Validators.required),
     customer: new FormControl('', Validators.required),
     service: new FormControl('', Validators.required),
-    startDate: new FormControl('', Validators.required),
-    endDate: new FormControl('', Validators.required),
-    Deposit: new FormControl('', Validators.required),
-    Total: new FormControl('', Validators.required),
+    startDate: new FormControl('', [Validators.required,  Validators.pattern('\\d{4}[-]((([0]{1})([1-9]{1}))|(([1]{1})([0-2]{1})))' +
+      '[-]((([0]{1})([1-9]{1}))|(([1-2]{1})([0-9]{1}))|(([3]{1})([0-1]{1})))')]),
+    endDate: new FormControl('', [Validators.required,  Validators.pattern('\\d{4}[-]((([0]{1})([1-9]{1}))|(([1]{1})([0-2]{1})))' +
+      '[-]((([0]{1})([1-9]{1}))|(([1-2]{1})([0-9]{1}))|(([3]{1})([0-1]{1})))')]),
+    deposit: new FormControl('', Validators.required),
+    total: new FormControl('', Validators.required),
   })
   constructor(private contractDetailService: ContractDetailService,
               private contractService: ContractService,

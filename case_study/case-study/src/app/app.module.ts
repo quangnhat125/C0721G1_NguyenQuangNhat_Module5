@@ -21,6 +21,7 @@ import {EmployeesModule} from './employees/employees.module';
 import {ServiceAppModule} from "./service-app/service-app.module";
 import {ContractModule} from "./contract/contract.module";
 import {ContractDetailModule} from "./contract-detail/contract-detail.module";
+import {NgxPaginationModule} from "ngx-pagination";
 
 
 // @ts-ignore
@@ -33,7 +34,7 @@ import {ContractDetailModule} from "./contract-detail/contract-detail.module";
     CustomerEditComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, CommonModule, ReactiveFormsModule,
-    CustomersModule, HttpClientModule, EmployeesModule, ServiceAppModule, ContractModule, ContractDetailModule ],
+    CustomersModule, HttpClientModule, EmployeesModule, ServiceAppModule, ContractModule, ContractDetailModule, NgxPaginationModule],
   providers: [],
   bootstrap: [AppComponent],
 })

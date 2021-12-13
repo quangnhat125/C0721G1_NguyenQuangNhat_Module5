@@ -21,12 +21,14 @@ export class EmployeeCreateComponent implements OnInit {
   positionList: Position[];
   divisionList: Division[];
   employeeForm = new FormGroup({
-    id: new FormControl('', Validators.required),
+    code: new FormControl('', [ Validators.required, Validators.pattern('[N][V][-]\\d{4}')]),
     name: new FormControl('', Validators.required),
     birthday: new FormControl('', Validators.required),
-    idCard: new FormControl('', Validators.required),
-    phone: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
+    idCard: new FormControl('', [Validators.required, Validators.pattern('\\d{9,12}')]),
+    phone: new FormControl('', [ Validators.required,
+      Validators.pattern('(((090)|(091))|((84)(90)|(84)(91)))\\d{7}$')]),
+    email: new FormControl('', [Validators.required,
+      Validators.pattern('^[a-z]+[a-zA-Z0-9]+@[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+\\.*[a-zA-Z0-9])*')]),
     education: new FormControl('', Validators.required),
     position: new FormControl('', Validators.required),
     division: new FormControl('', Validators.required),

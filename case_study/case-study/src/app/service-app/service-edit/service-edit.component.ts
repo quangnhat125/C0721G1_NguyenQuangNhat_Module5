@@ -17,12 +17,12 @@ export class ServiceEditComponent implements OnInit {
   service: Service;
   id: number;
   serviceForm = new FormGroup({
-    id: new FormControl('', Validators.required),
+    code: new FormControl('', [Validators.required, Validators.pattern('[D][V][-]\\d{4}')]),
     name: new FormControl('', Validators.required),
-    area: new FormControl('', Validators.required),
-    numberFloor: new FormControl('', Validators.required),
-    maxPeople: new FormControl('', Validators.required),
-    price: new FormControl('', Validators.required),
+    area: new FormControl('', [Validators.required, Validators.min(0)]),
+    numberFloor: new FormControl('', [Validators.required, Validators.min(0)]),
+    maxPeople: new FormControl('', [Validators.required, Validators.min(0)]),
+    price: new FormControl('', [Validators.required, Validators.min(0)]),
     rentType: new FormControl('', Validators.required),
     status: new FormControl('', Validators.required),
   })
@@ -43,7 +43,7 @@ export class ServiceEditComponent implements OnInit {
     return this.rentTypeService.getRentTypeList().subscribe(value => this.rentTypeList = value);
   }
   getService(id: number) {
-    return this.serviceAppService.findById(id).subscribe(service => {this.serviceForm.setValue(service); });
+    return this.serviceAppService.findById(id).subscribe(service => {this.serviceForm.setValue(service);});
   }
   compareRentType(c1: RentType, c2: RentType): boolean {
     return c1 && c2 ? c1.id === c2.id : c1 === c2;

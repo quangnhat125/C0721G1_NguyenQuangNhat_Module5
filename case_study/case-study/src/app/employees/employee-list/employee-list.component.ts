@@ -8,6 +8,7 @@ import {EmployeeService} from '../../service/employee/employee.service';
 import {EducationService} from '../../service/employee/education.service';
 import {PositionService} from '../../service/employee/position.service';
 import {DivisionService} from '../../service/employee/division.service';
+import {FormControl, FormGroup} from "@angular/forms";
 
 
 // @ts-ignore
@@ -21,6 +22,14 @@ export class EmployeeListComponent implements OnInit {
   positionList: Position[];
   divisionList: Division[];
   employeeList: Employee[];
+  idDelete: number;
+  employeeSearch: Employee;
+  employeeSearchForm = new FormGroup({
+    name: new FormControl(''),
+    position: new FormControl(''),
+    education: new FormControl(''),
+    division: new FormControl('')
+  })
   constructor(private employeeService: EmployeeService,
               private educationService: EducationService,
               private positionService: PositionService,
@@ -49,5 +58,20 @@ export class EmployeeListComponent implements OnInit {
   }
   getEmployeeList() {
     this.employeeService.getEmployeeList().subscribe(employeeList => this.employeeList = employeeList);
+  }
+
+  delete(id: number) {
+    this.idDelete = id;
+  }
+
+  deleteEmployee() {
+    this.employeeService.deleteEmployee(this.idDelete).subscribe(value => {
+      this.ngOnInit();
+    });
+  }
+
+  searchEmployee() {
+    this.employeeSearch = Object.assign({}, this.employeeSearchForm.value);
+    this.employeeService.searchEmployee(this.employeeSearch).subscribe(value => this.employeeList = value);
   }
 }

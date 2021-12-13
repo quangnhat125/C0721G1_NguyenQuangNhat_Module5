@@ -1,17 +1,9 @@
-<h2 style="text-align: center">CREATE CUSTOMER FORM</h2>
+<h2 style="text-align: center">CREATE CONTRACT DETAIL FORM</h2>
 <div class="row">
   <div class="col-3"></div>
   <div class="col-6" align="center">
     <form [formGroup]="contractDetailForm" (ngSubmit)="createContractDetail()">
       <table border="1" cellpadding="5">
-        <tr>
-          <th>Contract Detail ID:</th>
-          <td>
-            <input type="text" formControlName="id" required />
-            <span style="color: red" *ngIf="contractDetailForm.controls.id.hasError('required') && contractDetailForm.controls.id.dirty">
-            ID cannot be blank!</span>
-          </td>
-        </tr>
         <tr>
           <th>Contract ID:</th>
           <td>
@@ -23,8 +15,6 @@
                 {{ct.id}}
               </option>
             </select>
-            <span style="color: red" *ngIf="contractDetailForm.controls.contract.hasError('required') && contractDetailForm.controls.contract.dirty">
-            Contract cannot be blank!</span>
           </td>
         </tr>
         <tr>
