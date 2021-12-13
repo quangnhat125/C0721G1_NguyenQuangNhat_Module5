@@ -51,8 +51,19 @@
           <th>Birthday:</th>
           <td>
             <input type="date" formControlName="birthday" required />
-            <span style="color: red" *ngIf="customerForm.controls.birthday.hasError('required') && customerForm.controls.birthday.dirty">
-            Birthday cannot be blank!</span>
+            <div style="color: red"
+                 *ngIf="!customerForm.controls.birthday.valid && (customerForm.controls.birthday.dirty ||
+            customerForm.controls.birthday.touched)">
+              <div [hidden]="!customerForm.get('birthday').errors.required">
+                ID Card cannot be blank!
+              </div>
+              <div [hidden]="!customerForm.get('birthday').errors.pattern">
+                Please enter correct format!
+              </div>
+              <div [hidden]="!customerForm.controls.birthday.hasError('under18')">
+                Age must be greater than 18!
+              </div>
+            </div>
           </td>
         </tr>
         <tr>

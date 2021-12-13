@@ -4,6 +4,7 @@
   <div class="col-6" align="center">
     <form [formGroup]="employeeForm" (ngSubmit)="updateEmployee()">
       <table border="1" cellpadding="5">
+        <input hidden formControlName="id">
         <tr>
           <th>Employee Code:</th>
           <td>
@@ -32,8 +33,20 @@
           <th>Birthday:</th>
           <td>
             <input type="date" formControlName="birthday" required />
-            <span style="color: red" *ngIf="employeeForm.controls.birthday.hasError('required') && employeeForm.controls.birthday.dirty">
-            Birthday cannot be blank!</span>
+
+            <div style="color: red"
+                 *ngIf="!employeeForm.controls.birthday.valid && (employeeForm.controls.birthday.dirty ||
+            employeeForm.controls.birthday.touched)">
+              <div [hidden]="!employeeForm.get('birthday').errors.required">
+                ID Card cannot be blank!
+              </div>
+              <div [hidden]="!employeeForm.get('birthday').errors.pattern">
+                Please enter correct format!
+              </div>
+              <div [hidden]="!employeeForm.controls.birthday.hasError('under18')">
+                Age must be greater than 18!
+              </div>
+            </div>
           </td>
         </tr>
         <tr>

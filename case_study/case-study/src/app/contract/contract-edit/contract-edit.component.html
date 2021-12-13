@@ -1,14 +1,15 @@
-<h2 style="text-align: center">CREATE CONTRACT FORM</h2>
+<h2 style="text-align: center">UPDATE CONTRACT FORM</h2>
 <div class="row">
   <div class="col-3"></div>
   <div class="col-6" align="center">
-    <form [formGroup]="contractForm" (ngSubmit)="createContract()">
+    <form [formGroup]="contractForm" (ngSubmit)="updateContract()">
       <table border="1" cellpadding="5">
         <tr>
           <th>Employee Name:</th>
           <td>
             <select
               formControlName="employee"
+              [compareWith]="compareEmployee"
             >
               <option value=""></option>
               <option *ngFor="let emp of employeeList " [ngValue]="emp">
@@ -25,6 +26,7 @@
           <td>
             <select
               formControlName="customer"
+              [compareWith]="compareCustomer"
             >
               <option value=""></option>
               <option *ngFor="let cus of customerList " [ngValue]="cus">
@@ -41,6 +43,7 @@
           <td>
             <select
               formControlName="service"
+              [compareWith]="compareService"
             >
               <option value=""></option>
               <option *ngFor="let service of serviceList " [ngValue]="service">
@@ -89,9 +92,9 @@
               </div>
             </div>
             <div style="color: red" *ngIf="!contractForm.valid && (contractForm.dirty || contractForm.touched)">
-            <div [hidden]="!contractForm.hasError('endDate')">
-              End Date must be greater than Start Date!
-            </div>
+              <div [hidden]="!contractForm.hasError('endDate')">
+                End Date must be greater than Start Date!
+              </div>
             </div>
           </td>
         </tr>
@@ -106,7 +109,7 @@
         </tr>
         <tr>
           <td colspan="2" align="center">
-            <input type="submit" value="CREATE"/>
+            <input type="submit" value="UPDATE"/>
           </td>
         </tr>
       </table>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {ContractListComponent} from "./contract-list/contract-list.component";
 import {ContractCreateComponent} from "./contract-create/contract-create.component";
+import {ContractEditComponent} from "./contract-edit/contract-edit.component";
 
 
 const routes: Routes = [
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'create',
     component: ContractCreateComponent
+  },
+  {
+    path: 'update/:id',
+    component: ContractEditComponent
   }
 ];
 

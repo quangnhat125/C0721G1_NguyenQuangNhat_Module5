@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomerService} from '../../service/customer/customer.service';
 import {CustomerTypeService} from '../../service/customer/customer-type.service';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
@@ -16,10 +16,13 @@ export class CustomerEditComponent implements OnInit {
   customerTypeList: CustomerType[];
   customer: Customer;
   customerForm = new FormGroup({
+    id: new FormControl(''),
     code: new FormControl('', [Validators.required, Validators.pattern('[K][H][-]\\d{4}')]),
     name: new FormControl('', Validators.required),
     customerType: new FormControl('', Validators.required),
-    birthday: new FormControl('', Validators.required),
+    birthday: new FormControl('', [Validators.required,
+      Validators.pattern('\\d{4}[-]((([0]{1})([1-9]{1}))|(([1]{1})([0-2]{1})))' +
+        '[-]((([0]{1})([1-9]{1}))|(([1-2]{1})([0-9]{1}))|(([3]{1})([0-1]{1})))'), this.checkMinAge]),
     idCard: new FormControl('', [Validators.required, Validators.pattern('\\d{9,12}')]),
     phone: new FormControl('', [ Validators.required,
       Validators.pattern('(((090)|(091))|((84)(90)|(84)(91)))\\d{7}$')]),
@@ -60,5 +63,11 @@ export class CustomerEditComponent implements OnInit {
     this.customerTypeService.getCustomerTypeList().subscribe(customerTypeList => {
       this.customerTypeList = customerTypeList;
     });
+  }
+  checkMinAge(abstractControl: AbstractControl): any {
+    const dateOfBirth = abstractControl.value;
+    const yearOfBirth = dateOfBirth.substr(0, 4);
+    const currentYear = new Date().getFullYear();
+    return currentYear - yearOfBirth >= 18 ? null : { under18: true};
   }
 }

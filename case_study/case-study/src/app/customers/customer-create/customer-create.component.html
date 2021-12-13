@@ -1,144 +1,280 @@
+<style>
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+</style>
 <h2 style="text-align: center">CREATE CUSTOMER FORM</h2>
 <div class="row">
   <div class="col-3"></div>
   <div class="col-6" align="center">
     <form [formGroup]="customerForm" (ngSubmit)="submit()">
-      <table border="1" cellpadding="5">
-        <tr>
-          <th>Customer Code:</th>
-          <td>
-            <input type="text" formControlName="code">
-            <!--          <span style="color: red"-->
-            <!--                *ngIf="customerForm.controls.code.hasError('required') && customerForm.controls.name.dirty">-->
-            <!--            Code cannot be blank!</span>-->
-            <!--          <span style="color: red"-->
-            <!--                *ngIf="customerForm.controls.code.hasError('pattern') && customerForm.controls.name.dirty">-->
-            <!--           Enter correct format!</span>-->
-            <div style="color: red"
-                 *ngIf="!customerForm.controls.code.valid && (customerForm.controls.code.dirty ||
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="code">Customer Code:</label>
+        <input type="text" id="code" formControlName="code" placeholder="Customer Code..">
+        <div style="color: red"
+             *ngIf="!customerForm.controls.code.valid && (customerForm.controls.code.dirty ||
             customerForm.controls.code.touched)">
-              <div [hidden]="!customerForm.get('code').errors.required">
-                Number Of Floor cannot be blank!
-              </div>
-              <div [hidden]="!customerForm.get('code').errors.pattern">
-                Please enter correct format! (KH-XXXX)
-              </div>
-              <!--            <div [hidden]="!this.customerForm.get('code').hasError('')">-->
-              <!--              Number Of Floor cannot be blank!-->
-              <!--            </div>-->
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th>Name:</th>
-          <td>
-            <input type="text" formControlName="name" required/>
-            <span style="color: red"
-                  *ngIf="customerForm.controls.name.hasError('required') && customerForm.controls.name.dirty">
-            Name cannot be blank!</span>
+          <div [hidden]="!customerForm.get('code').errors.required">
+            Number Of Floor cannot be blank!
+          </div>
+          <div [hidden]="!customerForm.get('code').errors.pattern">
+            Please enter correct format! (KH-XXXX)
+          </div>
+          <div [hidden]="!this.customerForm.get('code').hasError('')">
+            Number Of Floor cannot be blank!
+          </div>
+        </div>
+      </div>
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="name">Customer Name:</label>
+        <input type="text" id="name" formControlName="name" placeholder="Customer Name..">
+        <label for="type">Customer Type:</label>
+        <select
+          id="type"
+          formControlName="customerType"
+        >
+          <option value="">Please Select Customer Type</option>
+          <option *ngFor="let type of customerTypeList " [ngValue]="type">
+            {{type.name}}
+          </option>
+        </select>
+        <span style="color: red"
+              *ngIf="customerForm.controls.customerType.hasError('required') && customerForm.controls.name.dirty">
+        Customer Type cannot be blank!</span>
+      </div>
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="birthday">Customer Birthday:</label>
+        <input type="date" id="birthday" formControlName="birthday" placeholder="Customer Birthday..">
+        <div style="color: red"
+             *ngIf="!customerForm.controls.birthday.valid && (customerForm.controls.birthday.dirty ||
+        customerForm.controls.birthday.touched)">
+          <div [hidden]="!customerForm.get('birthday').errors.required">
+            ID Card cannot be blank!
+          </div>
+          <div [hidden]="!customerForm.get('birthday').errors.pattern">
+            Please enter correct format!
+          </div>
+          <div [hidden]="!customerForm.controls.birthday.hasError('under18')">
+            Age must be greater than 18!
+          </div>
+        </div>
+      </div>
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="idCard">Customer ID Card:</label>
+        <input type="text" id="idCard" formControlName="idCard" placeholder="ID Card..">
+        <div style="color: red"
+             *ngIf="!customerForm.controls.idCard.valid && (customerForm.controls.idCard.dirty ||
+        customerForm.controls.code.touched)">
+          <div [hidden]="!customerForm.get('idCard').errors.required">
+            ID Card cannot be blank!
+          </div>
+          <div [hidden]="!customerForm.get('idCard').errors.pattern">
+            Please enter correct format! (9 or 12 digits)
+          </div>
+        </div>
+      </div>
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="phone">Phone Number:</label>
+        <input type="text" id="phone" formControlName="phone" placeholder="Phone Number..">
+        <div style="color: red"
+             *ngIf="!customerForm.controls.phone.valid && (customerForm.controls.phone.dirty ||
+        customerForm.controls.phone.touched)">
+          <div [hidden]="!customerForm.get('phone').errors.required">
+            Phone number cannot be blank!
+          </div>
+          <div [hidden]="!customerForm.get('phone').errors.pattern">
+            Please enter correct format! (090-XXXXXXX or 091-XXXXXXX)
+          </div>
+        </div>
+      </div>
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="email">Email:</label>
+        <input type="text" id="email" formControlName="email" placeholder="Email..">
+        <div style="color: red"
+             *ngIf="!customerForm.controls.email.valid && (customerForm.controls.email.dirty ||
+        customerForm.controls.email.touched)">
+          <div [hidden]="!customerForm.get('email').errors.required">
+            Email cannot be blank!
+          </div>
+          <div [hidden]="!customerForm.get('email').errors.pattern">
+            Please enter correct format!
+          </div>
+        </div>
+      </div>
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="address">Address:</label>
+        <input type="text" id="address" formControlName="address" placeholder="Address..">
+        <div style="color: red"
+             *ngIf="customerForm.controls.address.hasError('required') && customerForm.controls.address.dirty">
+          Address cannot be blank!
+        </div>
+      </div>
+      <div>
+        <button  class="btn btn-primary btn-lg"  [disabled]="!customerForm.valid">Create Customer</button>
+      </div>
+      <!--      <table border="1" cellpadding="5">-->
+      <!--        <tr>-->
+      <!--          <th>Customer Code:</th>-->
+      <!--          <td>-->
+      <!--            <input type="text" formControlName="code">-->
+      <!--            &lt;!&ndash;          <span style="color: red"&ndash;&gt;-->
+      <!--            &lt;!&ndash;                *ngIf="customerForm.controls.code.hasError('required') && customerForm.controls.name.dirty">&ndash;&gt;-->
+      <!--            &lt;!&ndash;            Code cannot be blank!</span>&ndash;&gt;-->
+      <!--            &lt;!&ndash;          <span style="color: red"&ndash;&gt;-->
+      <!--            &lt;!&ndash;                *ngIf="customerForm.controls.code.hasError('pattern') && customerForm.controls.name.dirty">&ndash;&gt;-->
+      <!--            &lt;!&ndash;           Enter correct format!</span>&ndash;&gt;-->
+      <!--            <div style="color: red"-->
+      <!--                 *ngIf="!customerForm.controls.code.valid && (customerForm.controls.code.dirty ||-->
+      <!--            customerForm.controls.code.touched)">-->
+      <!--              <div [hidden]="!customerForm.get('code').errors.required">-->
+      <!--                Number Of Floor cannot be blank!-->
+      <!--              </div>-->
+      <!--              <div [hidden]="!customerForm.get('code').errors.pattern">-->
+      <!--                Please enter correct format! (KH-XXXX)-->
+      <!--              </div>-->
+      <!--                          <div [hidden]="!this.customerForm.get('code').hasError('')">-->
+      <!--                            Number Of Floor cannot be blank!-->
+      <!--                          </div>-->
+      <!--            </div>-->
+      <!--          </td>-->
+      <!--        </tr>-->
+      <!--        <tr>-->
+      <!--          <th>Name:</th>-->
+      <!--          <td>-->
+      <!--            <input type="text" formControlName="name" required/>-->
+      <!--            <span style="color: red"-->
+      <!--                  *ngIf="customerForm.controls.name.hasError('required') && customerForm.controls.name.dirty">-->
+      <!--            Name cannot be blank!</span>-->
 
-          </td>
-        </tr>
-        <tr>
-          <th>Customer Type:</th>
-          <td>
-            <select
-              name="customerType"
-              id="customerType"
-              formControlName="customerType"
-            >
-              <option value=""></option>
-              <option *ngFor="let type of customerTypeList " [ngValue]="type">
-                {{type.name}}
-              </option>
-            </select>
-            <span style="color: red"
-                  *ngIf="customerForm.controls.customerType.hasError('required') && customerForm.controls.name.dirty">
-            Customer Type cannot be blank!</span>
-          </td>
-        </tr>
-        <tr>
-          <th>Birthday:</th>
-          <td>
-            <input type="date" formControlName="birthday" required/>
-            <div style="color: red"
-                 *ngIf="!customerForm.controls.birthday.valid && (customerForm.controls.birthday.dirty ||
-            customerForm.controls.birthday.touched)">
-              <div [hidden]="!customerForm.get('birthday').errors.required">
-                ID Card cannot be blank!
-              </div>
-              <div [hidden]="!customerForm.get('birthday').errors.pattern">
-                Please enter correct format!
-              </div>
-              <div [hidden]="!customerForm.controls.birthday.hasError('under18')">
-                Age must be greater than 18!
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th>ID Card:</th>
-          <td>
-            <input type="text" formControlName="idCard" required/>
-            <div style="color: red"
-                 *ngIf="!customerForm.controls.idCard.valid && (customerForm.controls.idCard.dirty ||
-            customerForm.controls.code.touched)">
-              <div [hidden]="!customerForm.get('idCard').errors.required">
-                ID Card cannot be blank!
-              </div>
-              <div [hidden]="!customerForm.get('idCard').errors.pattern">
-                Please enter correct format! (9 or 12 digits)
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th>Phone:</th>
-          <td>
-            <input type="text" formControlName="phone" required/>
-            <div style="color: red"
-                 *ngIf="!customerForm.controls.phone.valid && (customerForm.controls.phone.dirty ||
-            customerForm.controls.phone.touched)">
-              <div [hidden]="!customerForm.get('phone').errors.required">
-               Phone number cannot be blank!
-              </div>
-              <div [hidden]="!customerForm.get('phone').errors.pattern">
-                Please enter correct format! (090-XXXXXXX or 091-XXXXXXX)
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th>Email:</th>
-          <td>
-            <input type="text" formControlName="email" required/>
-            <div style="color: red"
-                 *ngIf="!customerForm.controls.email.valid && (customerForm.controls.email.dirty ||
-            customerForm.controls.email.touched)">
-              <div [hidden]="!customerForm.get('email').errors.required">
-                Email cannot be blank!
-              </div>
-              <div [hidden]="!customerForm.get('email').errors.pattern">
-                Please enter correct format!
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th>Address:</th>
-          <td>
-            <input type="text" formControlName="address" required/>
-            <span style="color: red"
-                  *ngIf="customerForm.controls.address.hasError('required') && customerForm.controls.address.dirty">
-            Address cannot be blank!</span>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2" align="center">
-            <button [disabled]="!customerForm.valid">CREATE</button>
-          </td>
-        </tr>
-      </table>
+      <!--          </td>-->
+      <!--        </tr>-->
+      <!--        <tr>-->
+      <!--          <th>Customer Type:</th>-->
+      <!--          <td>-->
+      <!--            <select-->
+      <!--              name="customerType"-->
+      <!--              id="customerType"-->
+      <!--              formControlName="customerType"-->
+      <!--            >-->
+      <!--              <option value=""></option>-->
+      <!--              <option *ngFor="let type of customerTypeList " [ngValue]="type">-->
+      <!--                {{type.name}}-->
+      <!--              </option>-->
+      <!--            </select>-->
+      <!--            <span style="color: red"-->
+      <!--                  *ngIf="customerForm.controls.customerType.hasError('required') && customerForm.controls.name.dirty">-->
+      <!--            Customer Type cannot be blank!</span>-->
+      <!--          </td>-->
+      <!--        </tr>-->
+      <!--        <tr>-->
+      <!--          <th>Birthday:</th>-->
+      <!--          <td>-->
+      <!--            <input type="date" formControlName="birthday" required/>-->
+      <!--            <div style="color: red"-->
+      <!--                 *ngIf="!customerForm.controls.birthday.valid && (customerForm.controls.birthday.dirty ||-->
+      <!--            customerForm.controls.birthday.touched)">-->
+      <!--              <div [hidden]="!customerForm.get('birthday').errors.required">-->
+      <!--                ID Card cannot be blank!-->
+      <!--              </div>-->
+      <!--              <div [hidden]="!customerForm.get('birthday').errors.pattern">-->
+      <!--                Please enter correct format!-->
+      <!--              </div>-->
+      <!--              <div [hidden]="!customerForm.controls.birthday.hasError('under18')">-->
+      <!--                Age must be greater than 18!-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <!--          </td>-->
+      <!--        </tr>-->
+      <!--        <tr>-->
+      <!--          <th>ID Card:</th>-->
+      <!--          <td>-->
+      <!--            <input type="text" formControlName="idCard" required/>-->
+      <!--            <div style="color: red"-->
+      <!--                 *ngIf="!customerForm.controls.idCard.valid && (customerForm.controls.idCard.dirty ||-->
+      <!--            customerForm.controls.code.touched)">-->
+      <!--              <div [hidden]="!customerForm.get('idCard').errors.required">-->
+      <!--                ID Card cannot be blank!-->
+      <!--              </div>-->
+      <!--              <div [hidden]="!customerForm.get('idCard').errors.pattern">-->
+      <!--                Please enter correct format! (9 or 12 digits)-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <!--          </td>-->
+      <!--        </tr>-->
+      <!--        <tr>-->
+      <!--          <th>Phone:</th>-->
+      <!--          <td>-->
+      <!--            <input type="text" formControlName="phone" required/>-->
+      <!--            <div style="color: red"-->
+      <!--                 *ngIf="!customerForm.controls.phone.valid && (customerForm.controls.phone.dirty ||-->
+      <!--            customerForm.controls.phone.touched)">-->
+      <!--              <div [hidden]="!customerForm.get('phone').errors.required">-->
+      <!--               Phone number cannot be blank!-->
+      <!--              </div>-->
+      <!--              <div [hidden]="!customerForm.get('phone').errors.pattern">-->
+      <!--                Please enter correct format! (090-XXXXXXX or 091-XXXXXXX)-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <!--          </td>-->
+      <!--        </tr>-->
+      <!--        <tr>-->
+      <!--          <th>Email:</th>-->
+      <!--          <td>-->
+      <!--            <input type="text" formControlName="email" required/>-->
+      <!--            <div style="color: red"-->
+      <!--                 *ngIf="!customerForm.controls.email.valid && (customerForm.controls.email.dirty ||-->
+      <!--            customerForm.controls.email.touched)">-->
+      <!--              <div [hidden]="!customerForm.get('email').errors.required">-->
+      <!--                Email cannot be blank!-->
+      <!--              </div>-->
+      <!--              <div [hidden]="!customerForm.get('email').errors.pattern">-->
+      <!--                Please enter correct format!-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <!--          </td>-->
+      <!--        </tr>-->
+      <!--        <tr>-->
+      <!--          <th>Address:</th>-->
+      <!--          <td>-->
+      <!--            <input type="text" formControlName="address" required/>-->
+      <!--            <span style="color: red"-->
+      <!--                  *ngIf="customerForm.controls.address.hasError('required') && customerForm.controls.address.dirty">-->
+      <!--            Address cannot be blank!</span>-->
+      <!--          </td>-->
+      <!--        </tr>-->
+      <!--        <tr>-->
+      <!--          <td colspan="2" align="center">-->
+      <!--            <button [disabled]="!customerForm.valid">CREATE</button>-->
+      <!--          </td>-->
+      <!--        </tr>-->
+      <!--      </table>-->
       <div class="col-3"></div>
     </form>
   </div>

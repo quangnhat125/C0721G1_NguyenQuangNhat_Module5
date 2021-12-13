@@ -1,9 +1,10 @@
 <h2 style="text-align: center">CONTRACT LIST</h2>
+<div>
+  <button  class="btn btn-primary btn-lg" routerLink="/contract/create">Create Contract</button>
+</div>
 
-<a class="nav-link" routerLink="/contract/create">Create Contract</a>
-
-<table class="table">
-  <thead>
+<table class="table table-striped">
+  <thead class="thead-dark">
   <tr>
     <th scope="col">Contract ID</th>
     <th scope="col">Employee ID</th>
@@ -20,7 +21,7 @@
     <th scope="col">Delete</th>
   </tr>
   </thead>
-  <tbody>
+  <tbody style="background-color: #f7f5f2">
   <tr *ngFor="let ct of contractList">
     <td>{{ct.id}}</td>
     <td>{{ct.employee.id}}</td>
@@ -34,7 +35,7 @@
     <td>{{ct.deposit}}</td>
     <td>{{ct.total}}</td>
     <td>
-      <button class="btn btn-primary" type="button"><a style="color: black" routerLink="/update/{{this.ct.id}}">Edit</a>
+      <button class="btn btn-primary" type="button"><a style="color: black" routerLink="/contract/update/{{this.ct.id}}">Edit</a>
       </button>
     </td>
     <td>

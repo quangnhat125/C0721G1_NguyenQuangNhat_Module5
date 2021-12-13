@@ -29,7 +29,7 @@
         "id": 2,
         "name": "Platinum"
       },
-      "birthday": "2021-12-01",
+      "birthday": "1999-07-09",
       "idCard": "201753690",
       "phone": "0905858501",
       "email": "quangnhatnguyen2011@gmail.com",
@@ -43,12 +43,26 @@
         "id": 2,
         "name": "Platinum"
       },
-      "birthday": "2021-12-01",
+      "birthday": "2002-06-12",
       "idCard": "201753690",
       "phone": "0905858501",
       "email": "quangnhatnguyen@gmail.com",
       "address": "Danang",
       "id": 5
+    },
+    {
+      "code": "KH-0005",
+      "name": "Nhat Nguyen",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "birthday": "2002-06-04",
+      "idCard": "656565652313",
+      "phone": "0905858502",
+      "email": "quangnhatnguyen2011@gmail.com",
+      "address": "78 St Clarens Ave",
+      "id": 7
     }
   ],
   "position": [
@@ -135,6 +149,28 @@
       },
       "salary": "2000000",
       "id": 1
+    },
+    {
+      "code": "NV-0002",
+      "name": "Chung Ding",
+      "birthday": "2002-06-04",
+      "idCard": "200178283",
+      "phone": "0915858501",
+      "email": "quangnhat@gmail.com",
+      "education": {
+        "id": 4,
+        "name": "Post-Graduated"
+      },
+      "position": {
+        "id": 6,
+        "name": "Director"
+      },
+      "division": {
+        "id": 2,
+        "name": "Administrative"
+      },
+      "salary": "15000000",
+      "id": 2
     }
   ],
   "rent-type": [
@@ -174,6 +210,21 @@
       },
       "status": "Available",
       "id": 1
+    },
+    {
+      "code": "DV-0002",
+      "name": "HVIP",
+      "area": "120",
+      "numberFloor": "2",
+      "maxPeople": "10",
+      "price": "4000000",
+      "rentType": {
+        "id": 3,
+        "name": "Day",
+        "price": 1000000
+      },
+      "status": "Available",
+      "id": 2
     }
   ],
   "attach-service": [
@@ -273,6 +324,74 @@
       },
       "quantity": "200000",
       "id": 1
+    },
+    {
+      "contract": {
+        "employee": {
+          "code": "NV-0001",
+          "name": "Chung Dinh",
+          "birthday": "2021-02-09",
+          "idCard": "201777888",
+          "phone": "0915858501",
+          "email": "quangnhatnguyen2011@gmail.com",
+          "education": {
+            "id": 2,
+            "name": "College"
+          },
+          "position": {
+            "id": 2,
+            "name": "Waiter"
+          },
+          "division": {
+            "id": 1,
+            "name": "Sale-Marketing"
+          },
+          "salary": "2000000",
+          "id": 1
+        },
+        "customer": {
+          "code": "KH-0002",
+          "name": "Nhat Nguyen",
+          "customerType": {
+            "id": 2,
+            "name": "Platinum"
+          },
+          "birthday": "2021-12-01",
+          "idCard": "201753690",
+          "phone": "0905858501",
+          "email": "quangnhatnguyen2011@gmail.com",
+          "address": "78 St Clarens Ave",
+          "id": 4
+        },
+        "service": {
+          "code": "DV-0001",
+          "name": "VL-0001",
+          "area": "120",
+          "numberFloor": "2",
+          "maxPeople": "10",
+          "price": "2000000",
+          "rentType": {
+            "id": 2,
+            "name": "Month",
+            "price": 10000000
+          },
+          "status": "Available",
+          "id": 1
+        },
+        "startDate": "2021-12-16",
+        "endDate": "2021-12-18",
+        "deposit": "1000000",
+        "total": "",
+        "id": 2
+      },
+      "attachService": {
+        "id": 2,
+        "name": "Karaoke",
+        "unit": 1,
+        "price": 200000
+      },
+      "quantity": "2",
+      "id": 2
     }
   ],
   "contract": [
@@ -330,6 +449,122 @@
       "deposit": "20000000",
       "total": "",
       "id": 1
+    },
+    {
+      "employee": {
+        "code": "NV-0001",
+        "name": "Chung Dinh",
+        "birthday": "2021-02-09",
+        "idCard": "201777888",
+        "phone": "0915858501",
+        "email": "quangnhatnguyen2011@gmail.com",
+        "education": {
+          "id": 2,
+          "name": "College"
+        },
+        "position": {
+          "id": 2,
+          "name": "Waiter"
+        },
+        "division": {
+          "id": 1,
+          "name": "Sale-Marketing"
+        },
+        "salary": "2000000",
+        "id": 1
+      },
+      "customer": {
+        "code": "KH-0002",
+        "name": "Nhat Nguyen",
+        "customerType": {
+          "id": 2,
+          "name": "Platinum"
+        },
+        "birthday": "2021-12-01",
+        "idCard": "201753690",
+        "phone": "0905858501",
+        "email": "quangnhatnguyen2011@gmail.com",
+        "address": "78 St Clarens Ave",
+        "id": 4
+      },
+      "service": {
+        "code": "DV-0001",
+        "name": "VL-0001",
+        "area": "120",
+        "numberFloor": "2",
+        "maxPeople": "10",
+        "price": "2000000",
+        "rentType": {
+          "id": 2,
+          "name": "Month",
+          "price": 10000000
+        },
+        "status": "Available",
+        "id": 1
+      },
+      "startDate": "2021-12-16",
+      "endDate": "2021-12-18",
+      "deposit": "1000000",
+      "total": "",
+      "id": 2
+    },
+    {
+      "employee": {
+        "code": "NV-0002",
+        "name": "Chung Ding",
+        "birthday": "2002-06-04",
+        "idCard": "200178283",
+        "phone": "0915858501",
+        "email": "quangnhat@gmail.com",
+        "education": {
+          "id": 4,
+          "name": "Post-Graduated"
+        },
+        "position": {
+          "id": 6,
+          "name": "Director"
+        },
+        "division": {
+          "id": 2,
+          "name": "Administrative"
+        },
+        "salary": "15000000",
+        "id": 2
+      },
+      "customer": {
+        "code": "KH-0003",
+        "name": "Bảo Nhi",
+        "customerType": {
+          "id": 2,
+          "name": "Platinum"
+        },
+        "birthday": "2002-06-12",
+        "idCard": "201753690",
+        "phone": "0905858501",
+        "email": "quangnhatnguyen@gmail.com",
+        "address": "Danang",
+        "id": 5
+      },
+      "service": {
+        "code": "DV-0002",
+        "name": "HVIP",
+        "area": "120",
+        "numberFloor": "2",
+        "maxPeople": "10",
+        "price": "4000000",
+        "rentType": {
+          "id": 3,
+          "name": "Day",
+          "price": 1000000
+        },
+        "status": "Available",
+        "id": 2
+      },
+      "startDate": "2021-12-16",
+      "endDate": "2021-12-29",
+      "deposit": "500000",
+      "total": "",
+      "id": 3
     }
   ]
 }

@@ -1,5 +1,7 @@
 <h2 style="text-align: center">EMPLOYEE LIST</h2>
-<a class="nav-link" routerLink="/employee/create">Create Employee</a>
+<div>
+  <button  class="btn btn-primary btn-lg" routerLink="/employee/create">Create Employee</button>
+</div>
 <div>
   <form [formGroup]="employeeSearchForm">
     <label for="nameSearch">Name Search: </label>
@@ -37,8 +39,8 @@
     <button (click)="searchEmployee()">Search</button>
   </form>
 </div>
-<table class="table">
-  <thead>
+<table class="table table-striped">
+  <thead class="thead-dark">
   <tr>
     <th scope="col">Employee ID</th>
     <th scope="col">Employee Code</th>
@@ -55,7 +57,7 @@
     <th scope="col">Delete</th>
   </tr>
   </thead>
-  <tbody>
+  <tbody style="background-color: #f7f5f2">
   <tr *ngFor="let emp of employeeList">
     <td>{{emp.id}}</td>
     <td>{{emp.code}}</td>

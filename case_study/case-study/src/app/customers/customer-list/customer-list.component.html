@@ -1,6 +1,7 @@
 <h2 style="text-align: center">CUSTOMER LIST</h2>
-
-<a class="nav-link" routerLink="/create">Create Customer</a>
+<div>
+<button  class="btn btn-primary btn-lg" routerLink="/create">Create Customer</button>
+</div>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalSearch">
   Search
@@ -41,8 +42,8 @@
   </div>
 </div>
 
-<table class="table">
-  <thead>
+<table class="table table-striped">
+  <thead class="thead-dark">
   <tr>
     <th scope="col">Customer ID</th>
     <th scope="col">Customer Code</th>
@@ -57,7 +58,7 @@
     <th scope="col">Delete</th>
   </tr>
   </thead>
-  <tbody>
+  <tbody style="background-color: #f7f5f2">
   <tr *ngFor="let cus of customerList | paginate: { itemsPerPage: 5, currentPage: page }">
     <td>{{cus.id}}</td>
     <td>{{cus.code}}</td>

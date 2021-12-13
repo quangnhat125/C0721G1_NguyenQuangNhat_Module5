@@ -1,9 +1,10 @@
 <h2 style="text-align: center">SERVICE LIST</h2>
+<div>
+  <button  class="btn btn-primary btn-lg" routerLink="/service/create">Create Service</button>
+</div>
 
-<a class="nav-link" routerLink="/service/create">Create Service</a>
-
-<table class="table">
-  <thead>
+<table class="table table-striped">
+  <thead class="thead-dark">
   <tr>
     <th scope="col">Service ID</th>
     <th scope="col">Service Code</th>
@@ -18,7 +19,7 @@
     <th scope="col">Delete</th>
   </tr>
   </thead>
-  <tbody>
+  <tbody style="background-color: #f7f5f2">
   <tr *ngFor="let service of serviceList">
     <td>{{service.id}}</td>
     <td>{{service.code}}</td>
