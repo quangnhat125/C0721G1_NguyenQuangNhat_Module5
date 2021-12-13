@@ -6,6 +6,7 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {CustomerType} from '../../model/CustomerType';
 import {Customer} from '../../model/customer';
 
+// @ts-ignore
 @Component({
   selector: 'app-customer-edit',
   templateUrl: './customer-edit.component.html',

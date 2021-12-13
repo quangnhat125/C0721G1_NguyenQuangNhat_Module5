@@ -21,34 +21,7 @@
       "name": "Member"
     }
   ],
-  "customer": [
-    {
-      "id": "1",
-      "name": "Nhat Nguyen Quang",
-      "customerType": {
-        "id": 2,
-        "name": "Platinum"
-      },
-      "birthday": "2020-07-08",
-      "idCard": "200178283",
-      "phone": "4379844751",
-      "email": "quangnhatnguyen2011@gmail.com",
-      "address": "78 St Clarens Ave"
-    },
-    {
-      "id": "2",
-      "name": "Nguyễn Ngọc Quỳnh",
-      "customerType": {
-        "id": 5,
-        "name": "Member"
-      },
-      "birthday": "2019-06-05",
-      "idCard": "201777888",
-      "phone": "0835123123",
-      "email": "a@gmail.com",
-      "address": "Hanoi"
-    }
-  ],
+  "customer": [],
   "position": [
     {
       "id": 1,
@@ -128,10 +101,173 @@
         "name": "Receptionist"
       },
       "division": {
-        "id": 1,
-        "name": "Sale-Marketing"
+        "id": 2,
+        "name": "Administrative"
       },
       "salary": 10000000
+    },
+    {
+      "id": "2",
+      "name": "Nguyễn Ngọc Quỳnh",
+      "birthday": "2019-03-06",
+      "idCard": "201753690",
+      "phone": "0835111111",
+      "email": "B@gmail.com",
+      "education": {
+        "id": 1,
+        "name": "Highschool"
+      },
+      "position": {
+        "id": 2,
+        "name": "Waiter"
+      },
+      "division": {
+        "id": 2,
+        "name": "Administrative"
+      },
+      "salary": "20000000"
+    }
+  ],
+  "rent-type": [
+    {
+      "id": 1,
+      "name": "Year",
+      "price": 50000000
+    },
+    {
+      "id": 2,
+      "name": "Month",
+      "price": 10000000
+    },
+    {
+      "id": 3,
+      "name": "Day",
+      "price": 1000000
+    },
+    {
+      "id": 4,
+      "name": "Hour",
+      "price": 200000
+    }
+  ],
+  "service": [
+    {
+      "id": 1,
+      "name": "Villa",
+      "area": 100,
+      "numberFloor": 2,
+      "maxPeople": 6,
+      "price": 2000000,
+      "rentType": {
+        "id": 3,
+        "name": "Day",
+        "price": 1000000
+      },
+      "status": "Available"
+    },
+    {
+      "id": "6",
+      "name": "VL22",
+      "area": "100",
+      "numberFloor": "3",
+      "maxPeople": "4",
+      "price": "200000",
+      "rentType": {
+        "id": 2,
+        "name": "Month",
+        "price": 10000000
+      },
+      "status": "2"
+    }
+  ],
+  "attach-service": [
+    {
+      "id": 1,
+      "name": "Massage",
+      "unit": 1,
+      "price": 500000
+    },
+    {
+      "id": 2,
+      "name": "Karaoke",
+      "unit": 1,
+      "price": 200000
+    },
+    {
+      "id": 3,
+      "name": "Food",
+      "unit": 1,
+      "price": 120000
+    },
+    {
+      "id": 4,
+      "name": "Water",
+      "unit": 1,
+      "price": 30000
+    },
+    {
+      "id": 5,
+      "name": "Rent Car",
+      "unit": 1,
+      "price": 250000
+    }
+  ],
+  "contract-detail": [],
+  "contract": [
+    {
+      "id": "2021-03-15",
+      "employee": {
+        "id": 1,
+        "name": "Nguyen Quang A",
+        "birthday": "1990-05-10",
+        "idCard": "200189933",
+        "email": "QA@gmail.com",
+        "phone": "0915858501",
+        "education": {
+          "id": 1,
+          "name": "Highschool"
+        },
+        "position": {
+          "id": 1,
+          "name": "Receptionist"
+        },
+        "division": {
+          "id": 2,
+          "name": "Administrative"
+        },
+        "salary": 10000000
+      },
+      "customer": {
+        "id": "1",
+        "name": "Nhat Nguyen Quang",
+        "customerType": {
+          "id": 2,
+          "name": "Platinum"
+        },
+        "birthday": "2020-07-08",
+        "idCard": "200178283",
+        "phone": "4379844751",
+        "email": "quangnhatnguyen2011@gmail.com",
+        "address": "78 St Clarens Ave"
+      },
+      "service": {
+        "id": "6",
+        "name": "VL22",
+        "area": "100",
+        "numberFloor": "3",
+        "maxPeople": "4",
+        "price": "200000",
+        "rentType": {
+          "id": 2,
+          "name": "Month",
+          "price": 10000000
+        },
+        "status": "2"
+      },
+      "startDate": "2021-02-02",
+      "endDate": "",
+      "Deposit": "",
+      "Total": ""
     }
   ]
 }

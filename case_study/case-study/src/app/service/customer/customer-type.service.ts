@@ -1,9 +1,12 @@
+// @ts-ignore
 import { Injectable } from '@angular/core';
 import {CustomerType} from '../../model/CustomerType';
+// @ts-ignore
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Customer} from '../../model/customer';
 
+// @ts-ignore
 @Injectable({
   providedIn: 'root'
 })

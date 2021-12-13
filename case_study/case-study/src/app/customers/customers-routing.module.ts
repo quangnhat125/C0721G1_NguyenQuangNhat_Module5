@@ -1,4 +1,6 @@
+// @ts-ignore
 import { NgModule } from '@angular/core';
+// @ts-ignore
 import { Routes, RouterModule } from '@angular/router';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import {CustomerCreateComponent} from './customer-create/customer-create.component';
@@ -24,6 +26,7 @@ const routes: Routes = [
   }
   ];
 
+// @ts-ignore
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],

@@ -1,1 +1,123 @@
-<p>employee-create works!</p>
+<h2 style="text-align: center">CREATE CUSTOMER FORM</h2>
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6" align="center">
+    <form [formGroup]="employeeForm" (ngSubmit)="createEmployee()">
+      <table border="1" cellpadding="5">
+        <tr>
+          <th>ID:</th>
+          <td>
+            <input type="text" formControlName="id" required />
+            <span style="color: red" *ngIf="employeeForm.controls.id.hasError('required') && employeeForm.controls.id.dirty">
+            ID cannot be blank!</span>
+          </td>
+        </tr>
+        <tr>
+          <th>Name:</th>
+          <td>
+            <input type="text" formControlName="name" required />
+            <span style="color: red" *ngIf="employeeForm.controls.name.hasError('required') && employeeForm.controls.name.dirty">
+            Name cannot be blank!</span>
+          </td>
+        </tr>
+        <tr>
+          <th>Birthday:</th>
+          <td>
+            <input type="date" formControlName="birthday" required />
+            <span style="color: red" *ngIf="employeeForm.controls.birthday.hasError('required') && employeeForm.controls.birthday.dirty">
+            Birthday cannot be blank!</span>
+          </td>
+        </tr>
+        <tr>
+          <th>ID Card:</th>
+          <td>
+            <input type="text" formControlName="idCard" required />
+            <span style="color: red" *ngIf="employeeForm.controls.idCard.hasError('required') && employeeForm.controls.idCard.dirty">
+            ID Card cannot be blank!</span>
+          </td>
+        </tr>
+        <tr>
+          <th>Phone:</th>
+          <td>
+            <input type="text" formControlName="phone" required />
+            <span style="color: red" *ngIf="employeeForm.controls.phone.hasError('required') && employeeForm.controls.phone.dirty">
+            Phone cannot be blank!</span>
+          </td>
+        </tr>
+        <tr>
+          <th>Email:</th>
+          <td>
+            <input type="text" formControlName="email" required />
+            <span style="color: red" *ngIf="employeeForm.controls.email.hasError('required') && employeeForm.controls.email.dirty">
+            Email cannot be blank!</span>
+          </td>
+        </tr>
+        <tr>
+          <th>Education:</th>
+          <td>
+            <select
+              name="education"
+              id="education"
+              formControlName="education"
+            >
+              <option value=""></option>
+              <option *ngFor="let type of educationList " [ngValue]="type">
+                {{type.name}}
+              </option>
+            </select>
+            <span style="color: red" *ngIf="employeeForm.controls.education.hasError('required') && employeeForm.controls.education.dirty">
+            Education cannot be blank!</span>
+          </td>
+        </tr>
+        <tr>
+          <th>Position:</th>
+          <td>
+            <select
+              name="position"
+              id="position"
+              formControlName="position"
+            >
+              <option value=""></option>
+              <option *ngFor="let type of positionList " [ngValue]="type">
+                {{type.name}}
+              </option>
+            </select>
+            <span style="color: red" *ngIf="employeeForm.controls.position.hasError('required') && employeeForm.controls.position.dirty">
+            Position cannot be blank!</span>
+          </td>
+        </tr>
+        <tr>
+          <th>Division:</th>
+          <td>
+            <select
+              name="division"
+              id="division"
+              formControlName="division"
+            >
+              <option value=""></option>
+              <option *ngFor="let type of divisionList " [ngValue]="type">
+                {{type.name}}
+              </option>
+            </select>
+            <span style="color: red" *ngIf="employeeForm.controls.division.hasError('required') && employeeForm.controls.division.dirty">
+            Position cannot be blank!</span>
+          </td>
+        </tr>
+        <tr>
+          <th>Salary:</th>
+          <td>
+            <input type="text" formControlName="salary" required />
+            <span style="color: red" *ngIf="employeeForm.controls.salary.hasError('required') && employeeForm.controls.salary.dirty">
+            Salary cannot be blank!</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <input type="submit" value="CREATE" />
+          </td>
+        </tr>
+      </table>
+      <div class="col-3"></div>
+    </form>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 <h2 style="text-align: center">EMPLOYEE LIST</h2>
+<a class="nav-link" routerLink="/employee/create">Create Employee</a>
 <table class="table">
   <thead>
   <tr>
@@ -29,11 +30,11 @@
     <td>{{emp.division.name}}</td>
     <td>{{emp.salary}}</td>
     <td>
-      <button class="btn btn-primary" type="button"><a style="color: black" >Edit</a>
+      <button class="btn btn-primary" type="button"><a style="color: black" routerLink="/employee/update/{{this.emp.id}} ">Edit</a>
       </button>
     </td>
     <td>
-      <button class="btn btn-primary">
+      <button class="btn btn-primary"  routerLink="/employee/delete/{{this.emp.id}}">
         <a style="color: black" >Delete</a>
       </button>
     </td>

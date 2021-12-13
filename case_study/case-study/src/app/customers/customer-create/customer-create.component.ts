@@ -1,14 +1,19 @@
+// @ts-ignore
 import {Validators} from '@angular/forms';
+// @ts-ignore
 import {FormControl} from '@angular/forms';
-
+// @ts-ignore
 import {FormGroup} from '@angular/forms';
+// @ts-ignore
 import {Component, OnInit} from '@angular/core';
 import {Customer} from 'src/app/model/customer';
 import {CustomerType} from 'src/app/model/CustomerType';
 import {CustomerService} from '../../service/customer/customer.service';
 import {CustomerTypeService} from '../../service/customer/customer-type.service';
+// @ts-ignore
 import {Router} from '@angular/router';
 
+// @ts-ignore
 @Component({
   selector: 'app-customer-create',
   templateUrl: './customer-create.component.html',

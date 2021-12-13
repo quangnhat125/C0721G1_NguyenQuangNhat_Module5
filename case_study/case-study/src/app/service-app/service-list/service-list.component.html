@@ -1,0 +1,41 @@
+<h2 style="text-align: center">SERVICE LIST</h2>
+
+<a class="nav-link" routerLink="/service/create">Create Service</a>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Service ID</th>
+    <th scope="col">Service Name</th>
+    <th scope="col">Area</th>
+    <th scope="col">Number Of Floor</th>
+    <th scope="col">Max People</th>
+    <th scope="col">Price</th>
+    <th scope="col">Rent Type</th>
+    <th scope="col">Status</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let service of serviceList">
+    <td>{{service.id}}</td>
+    <td>{{service.name}}</td>
+    <td>{{service.area}}</td>
+    <td>{{service.numberFloor}}</td>
+    <td>{{service.maxPeople}}</td>
+    <td>{{service.price}}</td>
+    <td>{{service.rentType.name}}</td>
+    <td>{{service.status}}</td>
+    <td>
+      <button class="btn btn-primary" type="button"><a style="color: black" routerLink="/service/update/{{this.service.id}}">Edit</a>
+      </button>
+    </td>
+    <td>
+      <button class="btn btn-primary">
+        <a style="color: black" routerLink="/service/delete/{{this.service.id}}">Delete</a>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>

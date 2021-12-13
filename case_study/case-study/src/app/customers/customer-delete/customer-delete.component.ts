@@ -1,8 +1,11 @@
+// @ts-ignore
 import {Component, OnInit} from '@angular/core';
 import {CustomerService} from '../../service/customer/customer.service';
 import {Customer} from '../../model/customer';
+// @ts-ignore
 import {ActivatedRoute, Route, Router} from '@angular/router';
 
+// @ts-ignore
 @Component({
   selector: 'app-customer-delete',
   templateUrl: './customer-delete.component.html',

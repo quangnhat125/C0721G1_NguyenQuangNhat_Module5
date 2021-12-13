@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class DivisionService {
-  private API_URL = 'http://localhost:3000/division-list';
+  private API_URL = 'http://localhost:3000/division';
   constructor(private httpClient: HttpClient) { }
   getDivisionList(): Observable<Division[]> {
     return this.httpClient.get<Division[]>(this.API_URL);

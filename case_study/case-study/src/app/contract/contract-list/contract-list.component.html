@@ -1,0 +1,47 @@
+<h2 style="text-align: center">CONTRACT LIST</h2>
+
+<a class="nav-link" routerLink="/contract/create">Create Contract</a>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Contract ID</th>
+    <th scope="col">Employee ID</th>
+    <th scope="col">Employee Name</th>
+    <th scope="col">Customer ID</th>
+    <th scope="col">Customer Name</th>
+    <th scope="col">Service ID</th>
+    <th scope="col">Service Name</th>
+    <th scope="col">Start Date</th>
+    <th scope="col">End Date</th>
+    <th scope="col">Deposit</th>
+    <th scope="col">Total</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let ct of contractList">
+    <td>{{ct.id}}</td>
+    <td>{{ct.employee.id}}</td>
+    <td>{{ct.employee.name}}</td>
+    <td>{{ct.customer.id}}</td>
+    <td>{{ct.customer.name}}</td>
+    <td>{{ct.service.id}}</td>
+    <td>{{ct.service.name}}</td>
+    <td>{{ct.startDate}}</td>
+    <td>{{ct.endDate}}</td>
+    <td>{{ct.deposit}}</td>
+    <td>{{ct.total}}</td>
+    <td>
+      <button class="btn btn-primary" type="button"><a style="color: black" routerLink="/update/{{this.ct.id}}">Edit</a>
+      </button>
+    </td>
+    <td>
+      <button class="btn btn-primary">
+        <a style="color: black" routerLink="/contract/delete/{{this.ct.id}}">Delete</a>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
