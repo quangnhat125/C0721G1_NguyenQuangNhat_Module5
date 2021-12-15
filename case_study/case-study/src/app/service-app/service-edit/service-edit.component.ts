@@ -17,6 +17,7 @@ export class ServiceEditComponent implements OnInit {
   service: Service;
   id: number;
   serviceForm = new FormGroup({
+    id: new FormControl(''),
     code: new FormControl('', [Validators.required, Validators.pattern('[D][V][-]\\d{4}')]),
     name: new FormControl('', Validators.required),
     area: new FormControl('', [Validators.required, Validators.min(0)]),

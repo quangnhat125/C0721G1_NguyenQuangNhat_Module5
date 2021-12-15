@@ -1,0 +1,198 @@
+<style>
+  /*input:invalid+div:after {*/
+  /*  position: absolute;*/
+  /*  content: '✖';*/
+  /*  padding-left: 5px;*/
+  /*}*/
+
+  /*input:valid+div:after {*/
+  /*  position: absolute;*/
+  /*  content: '✓';*/
+  /*  padding-left: 5px;*/
+  /*}*/
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  input[type=date], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  input[type=time], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+</style>
+<h2 style="text-align: center">UPDATE CAR FORM</h2>
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6" align="center">
+    <form [formGroup]="carEditForm" (ngSubmit)="updateCar()">
+      <input hidden formControlName="id">
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="code">Car Plate:</label>
+        <input disabled type="text" id="code" formControlName="carPlate" required="">
+      </div>
+
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="type">Car Type (*):</label>
+        <input type="text" id="type" formControlName="type" required/>
+        <span style="color: red"
+              *ngIf="carEditForm.controls.type.hasError('required') && carEditForm.controls.type.dirty">
+            Car Type cannot be blank!</span>
+      </div>
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="name">Name (*):</label>
+        <input type="text" id="name" formControlName="name" placeholder="Enter name of company...."/>
+        <div style="color: red"
+             *ngIf="!carEditForm.controls.name.valid && (carEditForm.controls.name.dirty ||
+            carEditForm.controls.name.touched)">
+          <div [hidden]="!carEditForm.get('name').errors.required">
+            ID Card cannot be blank!
+          </div>
+        </div>
+      </div>
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="departure">Departure (*):</label>
+        <select
+          id="departure"
+          formControlName="departure"
+          [compareWith]="compareDeparture"
+        >
+          <option value=""></option>
+          <option *ngFor="let type of departureList " [ngValue]="type">
+            {{type.name}}
+          </option>
+        </select>
+        <span style="color: red"
+              *ngIf="carEditForm.controls.departure.hasError('required') && carEditForm.controls.departure.dirty">
+            Departure cannot be blank!</span>
+      </div>
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="arrival">Arrival (*):</label>
+        <select
+          id="arrival"
+          formControlName="arrival"
+          [compareWith]="compareArrival"
+        >
+          <option value=""></option>
+          <option *ngFor="let type of arrivalList " [ngValue]="type">
+            {{type.name}}
+          </option>
+        </select>
+        <span style="color: red"
+              *ngIf="carEditForm.controls.arrival.hasError('required') && carEditForm.controls.arrival.dirty">
+            Arrival cannot be blank!</span>
+      </div>
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="email">Email (*):</label>
+        <input type="text" id="email" formControlName="email" placeholder="Enter email...."/>
+        <div style="color: red"
+             *ngIf="!carEditForm.controls.email.valid && (carEditForm.controls.email.dirty ||
+            carEditForm.controls.email.touched)">
+          <div [hidden]="!carEditForm.get('email').errors.required">
+            Email cannot be blank!
+          </div>
+          <div [hidden]="!carEditForm.get('email').errors.pattern">
+            Please enter correct format!
+          </div>
+        </div>
+      </div>
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="phone">Phone (*):</label>
+
+        <input type="text" id="phone" formControlName="phone" placeholder="Enter phone number...."/>
+        <div style="color: red"
+             *ngIf="!carEditForm.controls.phone.valid && (carEditForm.controls.phone.dirty ||
+            carEditForm.controls.phone.touched)">
+          <div [hidden]="!carEditForm.get('phone').errors.required">
+            Phone number cannot be blank!
+          </div>
+          <div [hidden]="!carEditForm.get('phone').errors.pattern">
+            Please enter correct format!
+          </div>
+        </div>
+      </div>
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="timeStart">Time Start (*):</label>
+        <input type="time" id="timeStart" formControlName="timeStart" min="05:00" max="23:00" />
+        <div style="color: red"
+             *ngIf="!carEditForm.controls.timeStart.valid && (carEditForm.controls.timeStart.dirty ||
+            carEditForm.controls.timeStart.touched)">
+          <div [hidden]="!carEditForm.get('timeStart').errors.required">
+            Time Start cannot be blank!
+          </div>
+          <div [hidden]="!carEditForm.get('timeStart').errors.pattern">
+            Please enter correct format!
+          </div>
+<!--          <div [hidden]="!carEditForm.input.timeStart.hasError('hour')">-->
+<!--           Time Start must be greater than 5:00!-->
+<!--          </div>-->
+        </div>
+      </div>
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="timeEnd">Time End (*):</label>
+
+        <input type="time" id="timeEnd" formControlName="timeEnd" min="05:00" max="23:00" required/>
+        <div style="color: red"
+             *ngIf="!carEditForm.controls.timeEnd.valid && (carEditForm.controls.timeEnd.dirty ||
+            carEditForm.controls.timeEnd.touched)">
+          <div [hidden]="!carEditForm.get('timeEnd').errors.required">
+            Time End cannot be blank!
+          </div>
+          <div [hidden]="!carEditForm.get('timeEnd').errors.pattern">
+            Please enter correct format!
+          </div>
+          <div class="validity"></div>
+        </div>
+      </div>
+      <tr>
+        <td colspan="2" align="center">
+          <button class="btn btn-primary btn-lg" [disabled]="!carEditForm.valid" style="margin-right: 100px">UPDATE</button>
+        </td>
+        <td colspan="2" align="center"></td>
+        <td colspan="2" align="center">
+          <button class="btn btn-primary btn-lg" routerLink="/car/list">Cancel</button>
+        </td>
+      </tr>
+      <div class="col-3"></div>
+    </form>
+  </div>
+</div>

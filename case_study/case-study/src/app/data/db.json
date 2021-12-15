@@ -23,46 +23,32 @@
   ],
   "customer": [
     {
+      "code": "KH-0001",
+      "name": "Nguyễn Quang Nhật",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "birthday": "1998-05-12",
+      "idCard": "201753690",
+      "phone": "0905858501",
+      "email": "quangnhatnguyen2011@gmail.com",
+      "address": "K10/17  Phạm Văn Nghị",
+      "id": 1
+    },
+    {
       "code": "KH-0002",
-      "name": "Nhat Nguyen",
+      "name": "Tấn Tài",
       "customerType": {
         "id": 2,
         "name": "Platinum"
       },
-      "birthday": "1999-07-09",
-      "idCard": "201753690",
-      "phone": "0905858501",
-      "email": "quangnhatnguyen2011@gmail.com",
-      "address": "78 St Clarens Ave",
-      "id": 4
-    },
-    {
-      "code": "KH-0003",
-      "name": "Bảo Nhi",
-      "customerType": {
-        "id": 2,
-        "name": "Platinum"
-      },
-      "birthday": "2002-06-12",
-      "idCard": "201753690",
-      "phone": "0905858501",
-      "email": "quangnhatnguyen@gmail.com",
-      "address": "Danang",
-      "id": 5
-    },
-    {
-      "code": "KH-0005",
-      "name": "Nhat Nguyen",
-      "customerType": {
-        "id": 2,
-        "name": "Platinum"
-      },
-      "birthday": "2002-06-04",
-      "idCard": "656565652313",
-      "phone": "0905858502",
-      "email": "quangnhatnguyen2011@gmail.com",
-      "address": "78 St Clarens Ave",
-      "id": 7
+      "birthday": "1997-11-30",
+      "idCard": "200774883",
+      "phone": "0915777777",
+      "email": "thanhtam@gmail.com",
+      "address": "Hà Nội",
+      "id": 2
     }
   ],
   "position": [
@@ -130,47 +116,25 @@
   "employee": [
     {
       "code": "NV-0001",
-      "name": "Chung Dinh",
-      "birthday": "2021-02-09",
-      "idCard": "201777888",
-      "phone": "0915858501",
-      "email": "quangnhatnguyen2011@gmail.com",
+      "name": "Bảo Nhi",
+      "birthday": "1998-11-16",
+      "idCard": "204897000",
+      "phone": "0913457291",
+      "email": "baonhi@gmail.com",
       "education": {
-        "id": 2,
-        "name": "College"
+        "id": 3,
+        "name": "University"
       },
       "position": {
-        "id": 2,
-        "name": "Waiter"
+        "id": 4,
+        "name": "Moderator"
       },
       "division": {
         "id": 1,
         "name": "Sale-Marketing"
       },
-      "salary": "2000000",
+      "salary": "12000000",
       "id": 1
-    },
-    {
-      "code": "NV-0002",
-      "name": "Chung Ding",
-      "birthday": "2002-06-04",
-      "idCard": "200178283",
-      "phone": "0915858501",
-      "email": "quangnhat@gmail.com",
-      "education": {
-        "id": 4,
-        "name": "Post-Graduated"
-      },
-      "position": {
-        "id": 6,
-        "name": "Director"
-      },
-      "division": {
-        "id": 2,
-        "name": "Administrative"
-      },
-      "salary": "15000000",
-      "id": 2
     }
   ],
   "rent-type": [
@@ -200,24 +164,24 @@
       "code": "DV-0001",
       "name": "VL-0001",
       "area": "120",
-      "numberFloor": "2",
-      "maxPeople": "10",
-      "price": "2000000",
+      "numberFloor": "3",
+      "maxPeople": "6",
+      "price": "6500000",
       "rentType": {
-        "id": 2,
-        "name": "Month",
-        "price": 10000000
+        "id": 3,
+        "name": "Day",
+        "price": 1000000
       },
       "status": "Available",
       "id": 1
     },
     {
       "code": "DV-0002",
-      "name": "HVIP",
-      "area": "120",
-      "numberFloor": "2",
+      "name": "VL-0002",
+      "area": "150",
+      "numberFloor": "3",
       "maxPeople": "10",
-      "price": "4000000",
+      "price": "8000000",
       "rentType": {
         "id": 3,
         "name": "Day",
@@ -263,126 +227,60 @@
     {
       "contract": {
         "employee": {
-          "id": "2",
-          "name": "Nguyễn Ngọc Quỳnh",
-          "birthday": "2021-12-01",
-          "idCard": "200177777",
-          "phone": "0816777777",
-          "email": "B@gmail.com",
-          "education": {
-            "id": 1,
-            "name": "Highschool"
-          },
-          "position": {
-            "id": 1,
-            "name": "Receptionist"
-          },
-          "division": {
-            "id": 2,
-            "name": "Administrative"
-          },
-          "salary": "20000000"
-        },
-        "customer": {
-          "id": 1,
-          "name": "Nguyễn Quang Nhật",
-          "customerType": {
-            "id": 2,
-            "name": "Platinum"
-          },
-          "birthday": "2020-10-13",
-          "idCard": "2001782823",
-          "phone": "0835123123",
-          "email": "quangnhatnguyen2011@gmail.com",
-          "address": "K10/17  Phạm Văn Nghị"
-        },
-        "service": {
-          "id": 1,
-          "name": "Villa",
-          "area": 100,
-          "numberFloor": 2,
-          "maxPeople": 6,
-          "price": 2000000,
-          "rentType": {
-            "id": 3,
-            "name": "Day",
-            "price": 1000000
-          },
-          "status": "Available"
-        },
-        "startDate": "2021-12-07",
-        "endDate": "2021-12-22",
-        "deposit": "20000000",
-        "total": "",
-        "id": 1
-      },
-      "attachService": {
-        "id": 2,
-        "name": "Karaoke",
-        "unit": 1,
-        "price": 200000
-      },
-      "quantity": "200000",
-      "id": 1
-    },
-    {
-      "contract": {
-        "employee": {
           "code": "NV-0001",
-          "name": "Chung Dinh",
-          "birthday": "2021-02-09",
-          "idCard": "201777888",
-          "phone": "0915858501",
-          "email": "quangnhatnguyen2011@gmail.com",
+          "name": "Bảo Nhi",
+          "birthday": "1998-11-16",
+          "idCard": "204897000",
+          "phone": "0913457291",
+          "email": "baonhi@gmail.com",
           "education": {
-            "id": 2,
-            "name": "College"
+            "id": 3,
+            "name": "University"
           },
           "position": {
-            "id": 2,
-            "name": "Waiter"
+            "id": 4,
+            "name": "Moderator"
           },
           "division": {
             "id": 1,
             "name": "Sale-Marketing"
           },
-          "salary": "2000000",
+          "salary": "12000000",
           "id": 1
         },
         "customer": {
-          "code": "KH-0002",
-          "name": "Nhat Nguyen",
+          "code": "KH-0001",
+          "name": "Nguyễn Quang Nhật",
           "customerType": {
-            "id": 2,
-            "name": "Platinum"
+            "id": 1,
+            "name": "Diamond"
           },
-          "birthday": "2021-12-01",
+          "birthday": "1998-05-12",
           "idCard": "201753690",
           "phone": "0905858501",
           "email": "quangnhatnguyen2011@gmail.com",
-          "address": "78 St Clarens Ave",
-          "id": 4
+          "address": "K10/17  Phạm Văn Nghị",
+          "id": 1
         },
         "service": {
-          "code": "DV-0001",
-          "name": "VL-0001",
-          "area": "120",
-          "numberFloor": "2",
+          "code": "DV-0002",
+          "name": "VL-0002",
+          "area": "150",
+          "numberFloor": "3",
           "maxPeople": "10",
-          "price": "2000000",
+          "price": "8000000",
           "rentType": {
-            "id": 2,
-            "name": "Month",
-            "price": 10000000
+            "id": 3,
+            "name": "Day",
+            "price": 1000000
           },
           "status": "Available",
-          "id": 1
+          "id": 2
         },
         "startDate": "2021-12-16",
         "endDate": "2021-12-18",
-        "deposit": "1000000",
-        "total": "",
-        "id": 2
+        "deposit": "500000",
+        "id": 1
       },
       "attachService": {
         "id": 2,
@@ -391,167 +289,54 @@
         "price": 200000
       },
       "quantity": "2",
-      "id": 2
+      "id": 1
     }
   ],
   "contract": [
     {
       "employee": {
-        "id": "2",
-        "name": "Nguyễn Ngọc Quỳnh",
-        "birthday": "2021-12-01",
-        "idCard": "200177777",
-        "phone": "0816777777",
-        "email": "B@gmail.com",
-        "education": {
-          "id": 1,
-          "name": "Highschool"
-        },
-        "position": {
-          "id": 1,
-          "name": "Receptionist"
-        },
-        "division": {
-          "id": 2,
-          "name": "Administrative"
-        },
-        "salary": "20000000"
-      },
-      "customer": {
-        "id": 1,
-        "name": "Nguyễn Quang Nhật",
-        "customerType": {
-          "id": 2,
-          "name": "Platinum"
-        },
-        "birthday": "2020-10-13",
-        "idCard": "2001782823",
-        "phone": "0835123123",
-        "email": "quangnhatnguyen2011@gmail.com",
-        "address": "K10/17  Phạm Văn Nghị"
-      },
-      "service": {
-        "id": 1,
-        "name": "Villa",
-        "area": 100,
-        "numberFloor": 2,
-        "maxPeople": 6,
-        "price": 2000000,
-        "rentType": {
-          "id": 3,
-          "name": "Day",
-          "price": 1000000
-        },
-        "status": "Available"
-      },
-      "startDate": "2021-12-07",
-      "endDate": "2021-12-22",
-      "deposit": "20000000",
-      "total": "",
-      "id": 1
-    },
-    {
-      "employee": {
         "code": "NV-0001",
-        "name": "Chung Dinh",
-        "birthday": "2021-02-09",
-        "idCard": "201777888",
-        "phone": "0915858501",
-        "email": "quangnhatnguyen2011@gmail.com",
+        "name": "Bảo Nhi",
+        "birthday": "1998-11-16",
+        "idCard": "204897000",
+        "phone": "0913457291",
+        "email": "baonhi@gmail.com",
         "education": {
-          "id": 2,
-          "name": "College"
+          "id": 3,
+          "name": "University"
         },
         "position": {
-          "id": 2,
-          "name": "Waiter"
+          "id": 4,
+          "name": "Moderator"
         },
         "division": {
           "id": 1,
           "name": "Sale-Marketing"
         },
-        "salary": "2000000",
+        "salary": "12000000",
         "id": 1
       },
       "customer": {
-        "code": "KH-0002",
-        "name": "Nhat Nguyen",
+        "code": "KH-0001",
+        "name": "Nguyễn Quang Nhật",
         "customerType": {
-          "id": 2,
-          "name": "Platinum"
+          "id": 1,
+          "name": "Diamond"
         },
-        "birthday": "2021-12-01",
+        "birthday": "1998-05-12",
         "idCard": "201753690",
         "phone": "0905858501",
         "email": "quangnhatnguyen2011@gmail.com",
-        "address": "78 St Clarens Ave",
-        "id": 4
-      },
-      "service": {
-        "code": "DV-0001",
-        "name": "VL-0001",
-        "area": "120",
-        "numberFloor": "2",
-        "maxPeople": "10",
-        "price": "2000000",
-        "rentType": {
-          "id": 2,
-          "name": "Month",
-          "price": 10000000
-        },
-        "status": "Available",
+        "address": "K10/17  Phạm Văn Nghị",
         "id": 1
-      },
-      "startDate": "2021-12-16",
-      "endDate": "2021-12-18",
-      "deposit": "1000000",
-      "total": "",
-      "id": 2
-    },
-    {
-      "employee": {
-        "code": "NV-0002",
-        "name": "Chung Ding",
-        "birthday": "2002-06-04",
-        "idCard": "200178283",
-        "phone": "0915858501",
-        "email": "quangnhat@gmail.com",
-        "education": {
-          "id": 4,
-          "name": "Post-Graduated"
-        },
-        "position": {
-          "id": 6,
-          "name": "Director"
-        },
-        "division": {
-          "id": 2,
-          "name": "Administrative"
-        },
-        "salary": "15000000",
-        "id": 2
-      },
-      "customer": {
-        "code": "KH-0003",
-        "name": "Bảo Nhi",
-        "customerType": {
-          "id": 2,
-          "name": "Platinum"
-        },
-        "birthday": "2002-06-12",
-        "idCard": "201753690",
-        "phone": "0905858501",
-        "email": "quangnhatnguyen@gmail.com",
-        "address": "Danang",
-        "id": 5
       },
       "service": {
         "code": "DV-0002",
-        "name": "HVIP",
-        "area": "120",
-        "numberFloor": "2",
+        "name": "VL-0002",
+        "area": "150",
+        "numberFloor": "3",
         "maxPeople": "10",
-        "price": "4000000",
+        "price": "8000000",
         "rentType": {
           "id": 3,
           "name": "Day",
@@ -561,10 +346,9 @@
         "id": 2
       },
       "startDate": "2021-12-16",
-      "endDate": "2021-12-29",
+      "endDate": "2021-12-18",
       "deposit": "500000",
-      "total": "",
-      "id": 3
+      "id": 1
     }
   ]
 }

@@ -18,10 +18,10 @@ import {CommonModule} from '@angular/common';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { CustomerEditComponent } from './customers/customer-edit/customer-edit.component';
 import {EmployeesModule} from './employees/employees.module';
-import {ServiceAppModule} from "./service-app/service-app.module";
-import {ContractModule} from "./contract/contract.module";
-import {ContractDetailModule} from "./contract-detail/contract-detail.module";
-import {NgxPaginationModule} from "ngx-pagination";
+import {ServiceAppModule} from './service-app/service-app.module';
+import {ContractModule} from './contract/contract.module';
+import {ContractDetailModule} from './contract-detail/contract-detail.module';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 // @ts-ignore
@@ -37,6 +37,7 @@ import {NgxPaginationModule} from "ngx-pagination";
     CustomersModule, HttpClientModule, EmployeesModule, ServiceAppModule, ContractModule, ContractDetailModule, NgxPaginationModule],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [LayoutComponent]
 })
 export class AppModule {
 }

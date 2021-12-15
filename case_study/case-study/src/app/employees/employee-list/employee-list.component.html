@@ -4,9 +4,9 @@
 </div>
 <div>
   <form [formGroup]="employeeSearchForm">
-    <label for="nameSearch">Name Search: </label>
+    <label style="font-weight: bold; font-size: x-large" for="nameSearch">Name Search: </label>
   <input id="nameSearch" formControlName="name" type="text" placeholder="Enter Name Search">
-    <label for="positionSearch">Position Search: </label>
+    <label style="font-weight: bold; font-size: x-large" for="positionSearch">Position Search: </label>
     <select
       id="positionSearch"
       formControlName="position"
@@ -16,7 +16,7 @@
         {{type.name}}
       </option>
     </select>
-    <label for="educationSearch">Education Search: </label>
+    <label style="font-weight: bold; font-size: x-large"  for="educationSearch">Education Search: </label>
     <select
       id="educationSearch"
       formControlName="education"
@@ -26,7 +26,7 @@
         {{type.name}}
       </option>
     </select>
-    <label for="divisionSearch">Division Search: </label>
+    <label style="font-weight: bold; font-size: x-large" for="divisionSearch">Division Search: </label>
     <select
       id="divisionSearch"
       formControlName="division"
@@ -36,7 +36,7 @@
         {{type.name}}
       </option>
     </select>
-    <button (click)="searchEmployee()">Search</button>
+    <button (click)="searchEmployee()" class="btn btn-primary btn-lg">Search</button>
   </form>
 </div>
 <table class="table table-striped">
@@ -71,11 +71,11 @@
     <td>{{emp.division.name}}</td>
     <td>{{emp.salary}}</td>
     <td>
-      <button class="btn btn-primary" type="button"><a style="color: black" routerLink="/employee/update/{{this.emp.id}} ">Edit</a>
+      <button class="btn btn-primary btn-warning" type="button"><a style="color: black" routerLink="/employee/update/{{this.emp.id}} ">Edit</a>
       </button>
     </td>
     <td>
-      <button (click)="delete(emp.id)"type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalDelete">
+      <button (click)="delete(emp.id)"type="button" class="btn btn-primary btn-danger" data-toggle="modal" data-target="#modalDelete">
         Delete
       </button>
     </td>

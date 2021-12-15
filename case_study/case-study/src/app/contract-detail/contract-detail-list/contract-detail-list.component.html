@@ -11,8 +11,6 @@
     <th scope="col">Attach Service ID</th>
     <th scope="col">Attach Service Name</th>
     <th scope="col">Quantity</th>
-    <th scope="col">Edit</th>
-    <th scope="col">Delete</th>
   </tr>
   </thead>
   <tbody style="background-color: #f7f5f2">
@@ -22,15 +20,15 @@
     <td>{{cd.attachService.id}}</td>
     <td>{{cd.attachService.name}}</td>
     <td>{{cd.quantity}}</td>
-    <td>
-      <button class="btn btn-primary" type="button"><a style="color: black" routerLink="/update/{{this.cd.id}}">Edit</a>
-      </button>
-    </td>
-    <td>
-      <button class="btn btn-primary">
-        <a style="color: black" routerLink="/contract-detail/delete/{{this.cd.id}}">Delete</a>
-      </button>
-    </td>
+<!--    <td>-->
+<!--      <button class="btn btn-primary btn-warning" type="button"><a style="color: black" routerLink="/update/{{this.cd.id}}">Edit</a>-->
+<!--      </button>-->
+<!--    </td>-->
+<!--    <td>-->
+<!--      <button class="btn btn-primary btn-danger">-->
+<!--        <a style="color: black" routerLink="/contract-detail/delete/{{this.cd.id}}">Delete</a>-->
+<!--      </button>-->
+<!--    </td>-->
   </tr>
   </tbody>
 </table>

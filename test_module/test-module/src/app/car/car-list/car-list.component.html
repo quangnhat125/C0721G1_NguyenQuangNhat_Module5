@@ -1,0 +1,67 @@
+<h2 style="text-align: center">CAR LIST</h2>
+<div>
+  <button  class="btn btn-primary btn-lg" routerLink="/car/create">Create Car</button>
+</div>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Car Plate</th>
+    <th scope="col">Type</th>
+    <th scope="col">Name</th>
+    <th scope="col">Departure</th>
+    <th scope="col">Arrival</th>
+    <th scope="col">Phone Number</th>
+    <th scope="col">Email</th>
+    <th scope="col">Time Start</th>
+    <th scope="col">Time End</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody style="background-color: #f7f5f2">
+  <tr *ngFor="let car of carList">
+    <td>{{car.id}}</td>
+    <td>{{car.carPlate}}</td>
+    <td>{{car.type}}</td>
+    <td>{{car.name}}</td>
+    <td>{{car.departure.name}}</td>
+    <td>{{car.arrival.name}}</td>
+    <td>{{car.phone}}</td>
+    <td>{{car.email}}</td>
+    <td>{{car.timeStart}}</td>
+    <td>{{car.timeEnd}}</td>
+    <td>
+      <button class="btn btn-primary btn-warning" type="button"><a style="color: black" routerLink="/car/update/{{this.car.id}}">Edit</a>
+      </button>
+    </td>
+    <td>
+      <button (click)="delete(car.id)" type="button" class="btn btn-primary btn-danger" data-toggle="modal" data-target="#modalDelete">
+        Delete
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<!-- Modal Delete -->
+<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       Are you sure to delete a car?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="deleteCar()" data-dismiss="modal">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

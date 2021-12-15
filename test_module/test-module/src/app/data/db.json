@@ -1,0 +1,96 @@
+{
+  "car": [
+    {
+      "id": 1,
+      "carPlate": "43A-180.80",
+      "type": "Giường nằm",
+      "name": "Mai Linh",
+      "departure": {
+        "id": 1,
+        "name": "Đà Nẵng"
+      },
+      "arrival": {
+        "id": 3,
+        "name": "Hồ Chí Minh"
+      },
+      "phone": "0905858501",
+      "email": "mailinh@gmail.com",
+      "timeStart": "01:00",
+      "timeEnd": "21:00"
+    },
+    {
+      "id": 2,
+      "carPlate": "43A-158.57",
+      "type": "Giường nằm",
+      "name": "Phương Trang",
+      "departure": {
+        "id": 2,
+        "name": "Hà Nội"
+      },
+      "arrival": {
+        "id": 4,
+        "name": "Quảng Ngãi"
+      },
+      "phone": "0905858501",
+      "email": "Phuongtrang@gmail.com",
+      "timeStart": "10:00",
+      "timeEnd": "22:00"
+    }
+  ],
+  "departure": [
+    {
+      "id": 1,
+      "name": "Đà Nẵng"
+    },
+    {
+      "id": 2,
+      "name": "Hà Nội"
+    },
+    {
+      "id": 3,
+      "name": "Hồ Chí Minh"
+    },
+    {
+      "id": 4,
+      "name": "Quảng Ngãi"
+    },
+    {
+      "id": 5,
+      "name": "Hải Phòng"
+    },
+    {
+      "id": 6,
+      "name": "Bình Định"
+    }
+  ],
+  "arrival": [
+    {
+      "id": 1,
+      "name": "Đà Nẵng"
+    },
+    {
+      "id": 2,
+      "name": "Hà Nội"
+    },
+    {
+      "id": 3,
+      "name": "Hồ Chí Minh"
+    },
+    {
+      "id": 4,
+      "name": "Quảng Ngãi"
+    },
+    {
+      "id": 5,
+      "name": "Buôn Mê Thuột"
+    },
+    {
+      "id": 6,
+      "name": "Gia Lai"
+    },
+    {
+      "id": 7,
+      "name": "Đà Lạt"
+    }
+  ]
+}

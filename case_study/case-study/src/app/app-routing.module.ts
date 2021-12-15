@@ -9,6 +9,7 @@ import {CustomerDeleteComponent} from './customers/customer-delete/customer-dele
 import {CustomerEditComponent} from './customers/customer-edit/customer-edit.component';
 import {EmployeeListComponent} from './employees/employee-list/employee-list.component';
 import {AppComponent} from './app.component';
+import {RouterHomeComponent} from "./main-pages/router-home/router-home.component";
 
 const routes: Routes = [
   // {
@@ -22,6 +23,14 @@ const routes: Routes = [
   //     }
   //   ]
   // },
+  {
+    path: '',
+    component: RouterHomeComponent
+  },
+  {
+    path: 'layout',
+    component: LayoutComponent
+  },
   {
     path: 'customer',
     // component: CustomerListComponent,

@@ -1,133 +1,159 @@
+<style>
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  input[type=date], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+</style>
 <h2 style="text-align: center">UPDATE SERVICE FORM</h2>
 <div class="row">
   <div class="col-3"></div>
   <div class="col-6" align="center">
     <form [formGroup]="serviceForm" (ngSubmit)="updateService()">
-      <table border="1" cellpadding="5">
-        <input hidden formControlName="id">
-        <tr>
-          <th>Service Code:</th>
-          <td>
-            <input type="text" formControlName="code" required="">
-            <div style="color: red"
-                 *ngIf="!serviceForm.controls.code.valid && (serviceForm.controls.code.dirty ||
+      <input hidden formControlName="id">
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="code">Service Code:</label>
+        <input type="text" id="code" formControlName="code" required="">
+        <div style="color: red"
+             *ngIf="!serviceForm.controls.code.valid && (serviceForm.controls.code.dirty ||
             serviceForm.controls.code.touched)">
-              <div [hidden]="!serviceForm.get('code').errors.required">
-                Number Of Floor cannot be blank!
-              </div>
-              <div [hidden]="!serviceForm.get('code').errors.pattern">
-                Please enter correct format! (DV-XXXX)
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th>Service Name:</th>
-          <td>
-            <input type="text" formControlName="name" required/>
-            <span style="color: red"
-                  *ngIf="serviceForm.controls.name.hasError('required') && serviceForm.controls.name.dirty">
+          <div [hidden]="!serviceForm.get('code').errors.required">
+            Number Of Floor cannot be blank!
+          </div>
+          <div [hidden]="!serviceForm.get('code').errors.pattern">
+            Please enter correct format! (DV-XXXX)
+          </div>
+          <!--            <div [hidden]="!this.customerForm.get('code').hasError('')">-->
+          <!--              Number Of Floor cannot be blank!-->
+          <!--            </div>-->
+        </div>
+      </div>
+
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="name">Service Name:</label>
+        <input type="text" id="name" formControlName="name" required/>
+        <span style="color: red"
+              *ngIf="serviceForm.controls.name.hasError('required') && serviceForm.controls.name.dirty">
             Name cannot be blank!</span>
-          </td>
-        </tr>
-        <tr>
-          <th>Area:</th>
-          <td>
-            <input type="text" formControlName="area" required/>
-            <div style="color: red"
-                 *ngIf="!serviceForm.controls.area.valid && (serviceForm.controls.area.dirty ||
+      </div>
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="area">Service Area:</label>
+        <input type="text" id="area" formControlName="area" required/>
+        <div style="color: red"
+             *ngIf="!serviceForm.controls.area.valid && (serviceForm.controls.area.dirty ||
             serviceForm.controls.area.touched)">
-              <div [hidden]="!serviceForm.get('area').errors.required">
-                Area cannot be blank!
-              </div>
-              <div [hidden]="!serviceForm.get('area').errors.pattern">
-                Area must be greater than 0!
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th>Number Of Floor:</th>
-          <td>
-            <input type="text" formControlName="numberFloor" required/>
-            <div style="color: red"
-                 *ngIf="!serviceForm.controls.numberFloor.valid && (serviceForm.controls.numberFloor.dirty ||
+          <div [hidden]="!serviceForm.get('area').errors.required">
+            Area cannot be blank!
+          </div>
+          <div [hidden]="!serviceForm.get('area').errors.pattern">
+            Area must be greater than 0!
+          </div>
+        </div>
+      </div>
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="floor">Number Of Floor:</label>
+        <input type="text" id="floor" formControlName="numberFloor" required/>
+        <div style="color: red"
+             *ngIf="!serviceForm.controls.numberFloor.valid && (serviceForm.controls.numberFloor.dirty ||
             serviceForm.controls.numberFloor.touched)">
-              <div [hidden]="!serviceForm.get('numberFloor').errors.required">
-                Number Of Floor cannot be blank!
-              </div>
-              <div [hidden]="!serviceForm.get('numberFloor').errors.pattern">
-                Number Of Floor must be greater than 0!
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th>Max People</th>
-          <td>
-            <input type="text" formControlName="maxPeople" required/>
-            <div style="color: red"
-                 *ngIf="!serviceForm.controls.maxPeople.valid && (serviceForm.controls.maxPeople.dirty ||
+          <div [hidden]="!serviceForm.get('numberFloor').errors.required">
+            Number Of Floor cannot be blank!
+          </div>
+          <div [hidden]="!serviceForm.get('numberFloor').errors.pattern">
+            Number Of Floor must be greater than 0!
+          </div>
+        </div>
+      </div>
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="people">Max People:</label>
+        <input type="text" id="people" formControlName="maxPeople" required/>
+        <div style="color: red"
+             *ngIf="!serviceForm.controls.maxPeople.valid && (serviceForm.controls.maxPeople.dirty ||
             serviceForm.controls.maxPeople.touched)">
-              <div [hidden]="!serviceForm.get('maxPeople').errors.required">
-                Max People cannot be blank!
-              </div>
-              <div [hidden]="!serviceForm.get('maxPeople').errors.pattern">
-                Max People must be greater than 0!
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th>Price:</th>
-          <td>
-            <input type="text" formControlName="price" required/>
-            <div style="color: red"
-                 *ngIf="!serviceForm.controls.price.valid && (serviceForm.controls.price.dirty ||
+          <div [hidden]="!serviceForm.get('maxPeople').errors.required">
+            Max People cannot be blank!
+          </div>
+          <div [hidden]="!serviceForm.get('maxPeople').errors.pattern">
+            Max People must be greater than 0!
+          </div>
+        </div>
+      </div>
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="price">Price:</label>
+        <input type="text" id="price" formControlName="price" required/>
+        <div style="color: red"
+             *ngIf="!serviceForm.controls.price.valid && (serviceForm.controls.price.dirty ||
             serviceForm.controls.price.touched)">
-              <div [hidden]="!serviceForm.get('price').errors.required">
-                Price cannot be blank!
-              </div>
-              <div [hidden]="!serviceForm.get('price').errors.pattern">
-                Price must be greater than 0!
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th>Rent Type:</th>
-          <td>
-            <select
-              name="rentType"
-              id="rentType"
-              formControlName="rentType"
-              [compareWith]="compareRentType"
-            >
-              <option value=""></option>
-              <option *ngFor="let type of rentTypeList " [ngValue]="type">
-                {{type.name}}
-              </option>
-            </select>
-            <span style="color: red"
-                  *ngIf="serviceForm.controls.rentType.hasError('required') && serviceForm.controls.rentType.dirty">
+          <div [hidden]="!serviceForm.get('price').errors.required">
+            Price cannot be blank!
+          </div>
+          <div [hidden]="!serviceForm.get('price').errors.pattern">
+            Price must be greater than 0!
+          </div>
+        </div>
+      </div>
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="rentType">Rent Type:</label>
+        <select
+          name="rentType"
+          id="rentType"
+          formControlName="rentType"
+          [compareWith]="compareRentType"
+        >
+          <option value=""></option>
+          <option *ngFor="let type of rentTypeList " [ngValue]="type">
+            {{type.name}}
+          </option>
+        </select>
+        <span style="color: red"
+              *ngIf="serviceForm.controls.rentType.hasError('required') && serviceForm.controls.rentType.dirty">
               Rent Type cannot be blank!</span>
-          </td>
-        </tr>
-        <tr>
-          <th>Status:</th>
-          <td>
-            <input type="text" formControlName="status" required/>
-            <span style="color: red"
-                  *ngIf="serviceForm.controls.status.hasError('required') && serviceForm.controls.status.dirty">
+      </div>
+      <div>
+        <label style="font-weight: bold; font-size: x-large" for="status">Status:</label>
+        <input type="text" id="status" formControlName="status" required/>
+        <span style="color: red"
+              *ngIf="serviceForm.controls.status.hasError('required') && serviceForm.controls.status.dirty">
             Status cannot be blank!</span>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2" align="center">
-            <button [disabled]="!serviceForm.valid">UPDATE</button>
-          </td>
-        </tr>
-      </table>
+      </div>
+      <td colspan="2" align="center">
+      <button class="btn btn-primary btn-lg" [disabled]="!serviceForm.valid">UPDATE</button>
+      </td>
       <div class="col-3"></div>
     </form>
   </div>

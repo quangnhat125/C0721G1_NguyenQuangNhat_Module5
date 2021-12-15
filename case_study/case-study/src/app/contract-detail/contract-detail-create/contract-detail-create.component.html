@@ -1,13 +1,54 @@
+<style>
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  input[type=date], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+</style>
 <h2 style="text-align: center">CREATE CONTRACT DETAIL FORM</h2>
 <div class="row">
   <div class="col-3"></div>
   <div class="col-6" align="center">
     <form [formGroup]="contractDetailForm" (ngSubmit)="createContractDetail()">
-      <table border="1" cellpadding="5">
-        <tr>
-          <th>Contract ID:</th>
-          <td>
+        <div>
+          <label style="font-weight: bold; font-size: x-large" for="contract">Contract ID:</label>
             <select
+              id="contract"
               formControlName="contract"
             >
               <option value=""></option>
@@ -15,12 +56,11 @@
                 {{ct.id}}
               </option>
             </select>
-          </td>
-        </tr>
-        <tr>
-          <th>Attach Service ID:</th>
-          <td>
+        </div>
+        <div>
+          <label style="font-weight: bold; font-size: x-large" for="as">Attach Service:</label>
             <select
+              id="as"
               formControlName="attachService"
             >
               <option value=""></option>
@@ -30,22 +70,14 @@
             </select>
             <span style="color: red" *ngIf="contractDetailForm.controls.attachService.hasError('required') && contractDetailForm.controls.attachService.dirty">
             Attach Service cannot be blank!</span>
-          </td>
-        </tr>
-        <tr>
-          <th>Quantity:</th>
-          <td>
-            <input type="text" formControlName="quantity" required />
+        </div>
+        <div>
+          <label style="font-weight: bold; font-size: x-large" for="quantity">Quantity:</label>
+            <input type="text" id="quantity" formControlName="quantity" required />
             <span style="color: red" *ngIf="contractDetailForm.controls.quantity.hasError('required') && contractDetailForm.controls.quantity.dirty">
             ID Card cannot be blank!</span>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2" align="center">
-            <input type="submit" value="CREATE" />
-          </td>
-        </tr>
-      </table>
+        </div>
+            <button class="btn btn-primary btn-lg" [disabled]="!contractDetailForm.valid" >CREATE</button>
       <div class="col-3"></div>
     </form>
   </div>

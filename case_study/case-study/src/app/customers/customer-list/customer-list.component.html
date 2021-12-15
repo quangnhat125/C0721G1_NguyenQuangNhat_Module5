@@ -70,11 +70,11 @@
     <td>{{cus.email}}</td>
     <td>{{cus.address}}</td>
     <td>
-      <button class="btn btn-primary" type="button"><a style="color: black" routerLink="/update/{{this.cus.id}}">Edit</a>
+      <button class="btn btn-primary btn-warning" type="button"><a style="color: black" [routerLink]="['/update', cus.id]">Edit</a>
       </button>
     </td>
     <td>
-      <button (click)="delete(cus.id)" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalDelete">
+      <button (click)="delete(cus.id)" type="button" class="btn btn-primary btn-danger" data-toggle="modal" data-target="#modalDelete">
         Delete
       </button>
 <!--      <button class="btn btn-primary">-->
@@ -100,8 +100,8 @@
         Are you want to delete?
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="deleteCustomer()" data-dismiss="modal">Delete</button>
+        <button type="button" class="btn btn-primary btn-warning" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-danger" (click)="deleteCustomer()" data-dismiss="modal">Delete</button>
       </div>
     </div>
   </div>

@@ -35,7 +35,7 @@ export class ContractEditComponent implements OnInit {
     endDate: new FormControl('', [Validators.required,  Validators.pattern('\\d{4}[-]((([0]{1})([1-9]{1}))|(([1]{1})([0-2]{1})))' +
       '[-]((([0]{1})([1-9]{1}))|(([1-2]{1})([0-9]{1}))|(([3]{1})([0-1]{1})))'), this.validFutureDate]),
     deposit: new FormControl('', Validators.required),
-    total: new FormControl('', Validators.required),
+    // total: new FormControl('', Validators.required),
   }, this.validEndDateFuture)
   constructor(private contractDetailService: ContractDetailService,
               private contractService: ContractService,
